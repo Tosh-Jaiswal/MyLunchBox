@@ -1,5 +1,5 @@
 const express = require("express")
-require('../db/mongoose')
+//require('../db/mongoose')
 const bodyParser=require("body-parser")
 const path = require('path')
 const hbs = require('hbs')
