@@ -1,0 +1,66 @@
+
+/*Top Bar CSS*/
+#btn-group {
+    position: fixed;
+    z-index: 100;
+    width: 100%;
+    height: 6vw;
+    background-color: rgba(0,0,0,0.5);
+    top: 0;
+    transition: top 0.3s;
+}
+
+#btn-group:hover {
+    opacity: 1;
+    background-color:black;
+}
+
+#btn-group .button {
+    background-color: rgba(0,0,0,0.01);; /* Green */
+    border: none;
+    /*custom font*/
+    font-family: "Amatic SC",SansSerif,serif;
+    color: rgba(255,255,255,0.8);
+    padding: 1.5vw 2.5vw;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 2.1vw;
+    font-style: oblique;
+    cursor: pointer;
+    float: right;
+}
+
+
+
+#btn-group .button:hover {
+    opacity: 1;
+    color:black;
+    background-color: white;
+}
+/*Top Bar CSS End*/
+
+
+/** Mobile **/
+@media screen and (max-width: 600px){
+/*@media only screen and (max-width: 550px), only screen and (max-device-width: 550px) {*/
+    .button{
+        opacity: 0;
+        visibility: hidden;
+    }
+
+}
+
+/** Tablet **/
+@media only screen and (min-width : 768px) and (max-width : 1024px) {
+
+
+
+}
+
+/** Tablet (landscape) **/
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
+
+
+
+}

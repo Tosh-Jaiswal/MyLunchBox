@@ -1,0 +1,117 @@
+.top-bg-img{
+  background-image: url("https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80");
+  height: 400px;
+  background-size: cover;
+}
+.container{
+  padding-top: 150px;
+}
+
+.btn-gps{
+  margin-right: 10px;
+  height: 60px;
+  width: 70px;
+  display: flex;
+}
+.top-heading{
+  position: relative;
+  color: white;
+  font-size: 70%;
+  top:130px;
+  left:125px;
+
+}
+.card-body {
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    padding: 0.5rem;
+    padding-right: 1rem;
+}
+/* .top-navbar{
+
+} */
+.inline{
+
+display: inline;
+}
+
+.foodPro{
+
+  float: left;
+  margin-right: 30px;
+  border-radius: 50%;
+}
+
+/* Star rating system css */
+.star{
+  color: goldenrod;
+  font-size: 1.5.0rem;
+    margin: -6px;
+
+}
+.star::before{
+  content: '\2606';    /* star outline */
+  cursor: pointer;
+}
+.star.rated::before{
+  /* the style for a selected star */
+  content: '\2605';  /* filled star */
+}
+
+.stars{
+    counter-reset: rateme 0;
+    font-size: 2rem;
+    font-weight: 900;
+    margin-top: 10px;
+
+
+}
+.star.rated{
+    counter-increment: rateme 1;
+}
+.stars::after{
+    content: counter(rateme) '/5';
+}
+
+
+/* END code star rating */
+
+.card-body{
+  width: 700px;
+  display: inline-block;
+  border-radius: 1px;
+}
+
+.cart-order-btn{
+  float: right;
+  height: auto;
+}
+.card{
+  display: inline-block;
+
+}
+
+.Pricetxt{
+  margin: 20px;
+}
+.sidediv{
+  height: auto;
+  width: auto;
+  padding: 10px;
+  float: right;
+  /* position: absolute; */
+  left: 1000px;
+  margin-right: 140px;
+  border: 2px #28a745 solid;
+  border-radius: 10px;
+}
+
+.salerinfo{
+  margin-left: 50px;
+}
+.Price{
+  display: block-inline;
+}
+.inline{
+  display:inline;
+}

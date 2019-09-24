@@ -1,0 +1,1127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<!--    browser Tab icon-->
+    <link rel="icon" type="image/png" href="img/logo2.png">
+<!--    end-->
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
+    <!--     Fonts and icons     -->
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+    <link href="CSS/material-kit.css?v=2.0.5" rel="stylesheet" />
+    <link rel="stylesheet" href="CSS/material-cards.css">
+    <link rel="stylesheet" href="CSS/TopBar.css">
+    <link rel="stylesheet" href="CSS/sidenav.css">
+    <link rel="stylesheet"  href="CSS/w3.css">
+    <link rel="stylesheet" href="CSS/JellyButton.css">
+    <link rel="stylesheet" href="CSS/filter.css">
+    <link rel="stylesheet" href="CSS/search_style.css">
+    <script src="Javascript/Core%20js/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="Javascript/Core%20js/nouislider.js"></script>
+    <script src="Javascript/search_script.js"></script>
+    <script src="Javascript/slider.js"></script>
+    <!--script to scroll to top on refresh-->
+<!--    <script>-->
+<!--        window.onbeforeunload = function () {-->
+<!--            window.scrollTo(0, 0);-->
+<!--        }-->
+<!--    </script>-->
+    <title>Lunchbox</title>
+
+    <style>
+
+        /* code to remove blue outlines during non key board accessing */
+        *:focus:not(.focus-visible) {
+            outline: none;
+        }
+        /* END */
+        .fa{
+            color: white;
+        }
+        .divider
+        {
+            position: relative;
+            margin-top: 90px;
+            height: 1px;
+        }
+
+        .div-transparent:before
+        {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 5%;
+            right: 5%;
+            width: 90%;
+            height: 1px;
+            background-image: linear-gradient(to right, transparent, rgb(48,49,51), transparent);
+        }
+
+        .div-arrow-down:after
+        {
+            content: "";
+            position: absolute;
+            z-index: 1;
+            top: -7px;
+            left: calc(50% - 7px);
+            width: 14px;
+            height: 14px;
+            transform: rotate(45deg);
+            background-color: white;
+            border-bottom: 1px solid rgb(48,49,51);
+            border-right: 1px solid rgb(48,49,51);
+        }
+
+        body{
+            width: 100% !important;
+            padding-right: 0 !important;
+        }
+        body.modal-open {
+            overflow: visible;
+            width: 100% !important;
+            padding-right: 0 !important;
+        }
+
+
+
+        @media screen and (min-width: 600px){
+            #sideitem5 {
+                display: none;
+            }
+            #sideitem6 {
+                display: none;
+            }
+
+        }
+        @media screen and (max-width: 600px)
+        {
+            #filterbu{
+                width: 80px;
+                padding:20px 20px 30px;
+            }
+            #sortbu{
+                width: 80px;
+                padding:20px 20px 30px;
+            }
+        }
+    </style>
+</head>
+<body  class="index-page sidebar-collapse" style="background-color: #00cc90">
+<!-- top menu -->
+<div id="btn-group">
+    <button  class="button2" id="btn" style="float: right; height: 6vw; width: 7vw; z-index: 300 ; position: relative; margin-right: 1vh ">
+        <div class="bar top"></div>
+        <div class="bar middle"></div>
+        <div class="bar bottom"></div>
+    </button>
+
+    <button class="button" style="opacity: 1; visibility: visible; float: left; "><img src ="img/logo2.png" alt ="logo" style="margin-top: -1vw; width: 3vw; height: 3.5vw" onclick="window.location.href = 'Main'" ></button>
+    <button class="button" onclick="window.location.href = 'signup-page-user'">Sign up</button>
+    <button class="button" onclick="window.location.href = 'login-page?ab=5'">Log In</button>
+
+</div>
+
+<!-- nav-drawer -->
+
+
+<div  class ="sidebar" >
+    <ul class="sidebar-list" style="font-family: 'Amatic SC',serif; font-size: 1.5vw;">
+        <li id="sideitem1" class="sidebar-item"><a style="color: black" href="profile-page" class="sidebar-anchor">Account</a></li>
+        <li id="sideitem2" class="sidebar-item"><a style="color: black" href="profile-page" class="sidebar-anchor">Order History</a></li>
+        <li id="sideitem3" class="sidebar-item"><a style="color: black" href="profile-page" class="sidebar-anchor">Favourites</a></li>
+        <li id="sideitem5" class="sidebar-item"><a style="color: black" href="signup-page-user" class="sidebar-anchor">Sign Up</a></li>
+        <li id="sideitem6" class="sidebar-item"><a style="color: black" href="login-page" class="sidebar-anchor">Log In</a></li>
+    </ul>
+</div>
+<main>
+
+                    <!-- Carousel Card -->
+                    <div class="card card-raised card-carousel" style="margin-top: -2vw">
+                        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="3000">
+                            <ol class="carousel-indicators">
+                                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                            </ol>
+                            <div class="carousel-inner" style="height: 49vw">
+                                <div class="carousel-item item active">
+                                    <img class="d-block w-100" style="margin-top: -7vw" src="img/2672285.jpg" alt="First slide">
+                                    <div class="carousel-caption d-none d-md-block">
+                                    </div>
+                                </div>
+                                <div class="carousel-item item">
+                                    <img class="d-block w-100" style="margin-top: -12vw" src="img/17473.jpg" alt="Second slide">
+                                    <div class="carousel-caption d-none d-md-block">
+                                    </div>
+                                </div>
+                                <div class="carousel-item item">
+                                    <img class="d-block w-100" style="margin-top: -20vw" src="img/17135.jpg" alt="Third slide">
+                                    <div class="carousel-caption d-none d-md-block">
+                                    </div>
+                                </div>
+                            </div>
+                            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                                <i class="material-icons">keyboard_arrow_left</i>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                                <i class="material-icons">keyboard_arrow_right</i>
+                                <span class="sr-only">Next</span>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- End Carousel Card -->
+
+    <div class="main main-raised "  >
+
+        <nav class="navbar navbar-expand bg-primary" style="height: 6vw; min-height: 60px">
+
+            <button id="filterbu" class="btn btn-primary" data-toggle="modal" data-target="#sidebar-left-filter" style="font-family: 'Cabin Sketch', SansSerif, serif; font-size: 2vw; margin-left: 2vw; height: 6vw">Filter</button>
+            <button id="sortbu" class="btn btn-primary" data-toggle="modal" data-target="#sidebar-left-sort" style="font-family: 'Cabin Sketch', SansSerif, serif; font-size: 2vw; margin-left: 2vw; height: 6vw">Sort by</button>
+            <div class="search-box" style="">
+                <div class="search-icon"><i class="fa fa-search search-icon"></i></div>
+                <form action="" class="search-form">
+                    <input type="text" placeholder="Search" id="search" autocomplete="off">
+                </form>
+                <svg class="search-border" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  x="0px" y="0px" viewBox="0 0 671 111" style="enable-background:new 0 0 671 111;"
+                     xml:space="preserve">
+          <path class="border" d="M335.5,108.5h-280c-29.3,0-53-23.7-53-53v0c0-29.3,23.7-53,53-53h280"/>
+                    <path class="border" d="M335.5,108.5h280c29.3,0,53-23.7,53-53v0c0-29.3-23.7-53-53-53h-280"/>
+        </svg>
+                <div class="go-icon"><i class="fa fa-arrow-right"></i></div>
+            </div>
+            <button  class="btn btn-primary"  style=" margin-left: 0.7vw; height: 6vw"><i style="font-size: 3vw" class="fa fa-shopping-cart"></i></button>
+
+
+        </nav>
+        <div class="row active-with-click">
+            <div class="col-md-4 col-sm-6 col-xs-12">
+                <article class="material-card Red" >
+                    <h2>
+                        <span>Provider_Name</span>
+                        <div class="row">
+                        <strong class="col-md-9">
+                            <i class="fa fa-fw fa-star"></i>
+                            <i class="fa fa-fw fa-star"></i>
+                            <i class="fa fa-fw fa-star"></i>
+                            <i class="fa fa-fw fa-star-half-o"></i>
+                            <i class="fa fa-fw fa-star-o"></i>
+                             </strong>
+                            <div class="col-md-2" id="likebutton">
+                        <button class="btn btn-link"  style="background-color: inherit; margin-top: -10px">
+                            <i class="fa fa-heart-o fa-lg" ></i>
+                        </button>
+                            </div>
+                        </div>
+                    </h2>
+                    <div class="mc-content">
+                        <div class="img-container">
+                            <img class="img-responsive" src="img/cook.jpg">
+                        </div>
+                        <div class="mc-description">
+                            I am a house wife who loves to cook. I Thought why not a earn a little money with my passion. Please Let me know if you like my food by giving a rating .
+                        </div>
+                    </div>
+                    <a class="mc-btn-action">
+                        <i class="fa fa-bars"></i>
+                    </a>
+                    <div class="mc-footer">
+                        <h4>23</h4>
+                        <h4 style="margin-left: 35px">
+                              Orders Completed
+                        </h4>
+                        <button class="btn  btn-primary btn-round"data-toggle="modal" data-target="#menu" style="background-color: #ff0000;  width: 70%;height: 70%; margin-left: 30px; margin-top: 1px" >Menu</button>
+                    </div>
+                </article>
+            </div>
+            <div class="col-md-4 col-sm-6 col-xs-12">
+                <article class="material-card Pink">
+                    <h2>
+                        <span>Sean Penn</span>
+                        <strong>
+                            <i class="fa fa-fw fa-star"></i>
+                            Mystic River
+                        </strong>
+                    </h2>
+                    <div class="mc-content">
+                        <div class="img-container">
+                            <img class="img-responsive" src="https://dl.dropboxusercontent.com/u/2691310/github/material-card/thumb-sean-penn.jpg">
+                        </div>
+                        <div class="mc-description">
+                            He has won two Academy Awards, for his roles in the mystery drama Mystic River (2003) and the biopic Milk (2008). Penn began his acting career in television with a brief appearance in a 1974 episode of Little House on the Prairie ...
+                        </div>
+                    </div>
+                    <a class="mc-btn-action">
+                        <i class="fa fa-bars"></i>
+                    </a>
+                    <div class="mc-footer">
+                        <h4>
+                            Social
+                        </h4>
+                        <a class="fa fa-fw fa-facebook"></a>
+                        <a class="fa fa-fw fa-twitter"></a>
+                        <a class="fa fa-fw fa-linkedin"></a>
+                        <a class="fa fa-fw fa-google-plus"></a>
+                    </div>
+                </article>
+            </div>
+            <div class="col-md-4 col-sm-6 col-xs-12">
+                <article class="material-card Purple">
+                    <h2>
+                        <span>Clint Eastwood</span>
+                        <strong>
+                            <i class="fa fa-fw fa-star"></i>
+                            Million Dollar Baby
+                        </strong>
+                    </h2>
+                    <div class="mc-content">
+                        <div class="img-container">
+                            <img class="img-responsive" src="https://dl.dropboxusercontent.com/u/2691310/github/material-card/thumb-clint-eastwood.jpg">
+                        </div>
+                        <div class="mc-description">
+                            He rose to international fame with his role as the Man with No Name in Sergio Leone's Dollars trilogy of spaghetti Westerns during the 1960s ...
+                        </div>
+                    </div>
+                    <a class="mc-btn-action">
+                        <i class="fa fa-bars"></i>
+                    </a>
+                    <div class="mc-footer">
+                        <h4>
+                            Social
+                        </h4>
+                        <a class="fa fa-fw fa-facebook"></a>
+                        <a class="fa fa-fw fa-twitter"></a>
+                        <a class="fa fa-fw fa-linkedin"></a>
+                        <a class="fa fa-fw fa-google-plus"></a>
+                    </div>
+                </article>
+            </div>
+            <div class="col-md-4 col-sm-6 col-xs-12">
+                <article class="material-card Deep-Purple">
+                    <h2>
+                        <span>Dustin Hoffman</span>
+                        <strong>
+                            <i class="fa fa-fw fa-star"></i>
+                            Kramer vs. Kramer
+                        </strong>
+                    </h2>
+                    <div class="mc-content">
+                        <div class="img-container">
+                            <img class="img-responsive" src="https://dl.dropboxusercontent.com/u/2691310/github/material-card/thumb-dustin-hoffman.jpg">
+                        </div>
+                        <div class="mc-description">
+                            He has been known for his versatile portrayals of antiheroes and vulnerable characters.[3] He won the Academy Award for Kramer vs. Kramer in 1979 ...
+                        </div>
+                    </div>
+                    <a class="mc-btn-action">
+                        <i class="fa fa-bars"></i>
+                    </a>
+                    <div class="mc-footer">
+                        <h4>
+                            Social
+                        </h4>
+                        <a class="fa fa-fw fa-facebook"></a>
+                        <a class="fa fa-fw fa-twitter"></a>
+                        <a class="fa fa-fw fa-linkedin"></a>
+                        <a class="fa fa-fw fa-google-plus"></a>
+                    </div>
+                </article>
+            </div>
+            <div class="col-md-4 col-sm-6 col-xs-12">
+                <article class="material-card Indigo">
+                    <h2>
+                        <span>Edward Norton</span>
+                        <strong>
+                            <i class="fa fa-fw fa-star"></i>
+                            American History X
+                        </strong>
+                    </h2>
+                    <div class="mc-content">
+                        <div class="img-container">
+                            <img class="img-responsive" src="https://dl.dropboxusercontent.com/u/2691310/github/material-card/thumb-edward-norton.jpg">
+                        </div>
+                        <div class="mc-description">
+                            He has been nominated for three Academy Awards for his work in the films Primal Fear, American History X and Birdman. He also starred in other roles ...
+                        </div>
+                    </div>
+                    <a class="mc-btn-action">
+                        <i class="fa fa-bars"></i>
+                    </a>
+                    <div class="mc-footer">
+                        <h4>
+                            Social
+                        </h4>
+                        <a class="fa fa-fw fa-facebook"></a>
+                        <a class="fa fa-fw fa-twitter"></a>
+                        <a class="fa fa-fw fa-linkedin"></a>
+                        <a class="fa fa-fw fa-google-plus"></a>
+                    </div>
+                </article>
+            </div>
+            <div class="col-md-4 col-sm-6 col-xs-12">
+                <article class="material-card Blue">
+                    <h2>
+                        <span>Michael Caine</span>
+                        <strong>
+                            <i class="fa fa-fw fa-star"></i>
+                            Educated Rita
+                        </strong>
+                    </h2>
+                    <div class="mc-content">
+                        <div class="img-container">
+                            <img class="img-responsive" src="https://dl.dropboxusercontent.com/u/2691310/github/material-card/thumb-michael-caine.jpg">
+                        </div>
+                        <div class="mc-description">
+                            English actor and author. Renowned for his distinctive working class cockney accent, Caine has appeared in over 115 films and is regarded as a British ...
+                        </div>
+                    </div>
+                    <a class="mc-btn-action">
+                        <i class="fa fa-bars"></i>
+                    </a>
+                    <div class="mc-footer">
+                        <h4>
+                            Social
+                        </h4>
+                        <a class="fa fa-fw fa-facebook"></a>
+                        <a class="fa fa-fw fa-twitter"></a>
+                        <a class="fa fa-fw fa-linkedin"></a>
+                        <a class="fa fa-fw fa-google-plus"></a>
+                    </div>
+                </article>
+            </div>
+            <div class="col-md-4 col-sm-6 col-xs-12">
+                <article class="material-card Light-Blue">
+                    <h2>
+                        <span>Harvey Keitel</span>
+                        <strong>
+                            <i class="fa fa-fw fa-star"></i>
+                            Pulp Fiction
+                        </strong>
+                    </h2>
+                    <div class="mc-content">
+                        <div class="img-container">
+                            <img class="img-responsive" src="https://dl.dropboxusercontent.com/u/2691310/github/material-card/thumb-harvey-keitel.jpg">
+                        </div>
+                        <div class="mc-description">
+                            Some of his most notable starring roles were in Martin Scorsese's Mean Streets and Taxi Driver, Ridley Scott's The Duellists and Thelma & Louise, Quentin Tarantino ...
+                        </div>
+                    </div>
+                    <a class="mc-btn-action">
+                        <i class="fa fa-bars"></i>
+                    </a>
+                    <div class="mc-footer">
+                        <h4>
+                            Social
+                        </h4>
+                        <a class="fa fa-fw fa-facebook"></a>
+                        <a class="fa fa-fw fa-twitter"></a>
+                        <a class="fa fa-fw fa-linkedin"></a>
+                        <a class="fa fa-fw fa-google-plus"></a>
+                    </div>
+                </article>
+            </div>
+            <div class="col-md-4 col-sm-6 col-xs-12">
+                <article class="material-card Cyan">
+                    <h2>
+                        <span>Jack Nicholson</span>
+                        <strong>
+                            <i class="fa fa-fw fa-star"></i>
+                            The Shining
+                        </strong>
+                    </h2>
+                    <div class="mc-content">
+                        <div class="img-container">
+                            <img class="img-responsive" src="https://dl.dropboxusercontent.com/u/2691310/github/material-card/thumb-jack-nicholson.jpg">
+                        </div>
+                        <div class="mc-description">
+                            Throughout his career, Nicholson has portrayed unique and challenging roles, many of which include dark portrayals of excitable, neurotic and psychopathic characters ...
+                        </div>
+                    </div>
+                    <a class="mc-btn-action">
+                        <i class="fa fa-bars"></i>
+                    </a>
+                    <div class="mc-footer">
+                        <h4>
+                            Social
+                        </h4>
+                        <a class="fa fa-fw fa-facebook"></a>
+                        <a class="fa fa-fw fa-twitter"></a>
+                        <a class="fa fa-fw fa-linkedin"></a>
+                        <a class="fa fa-fw fa-google-plus"></a>
+                    </div>
+                </article>
+            </div>
+            <div class="col-md-4 col-sm-6 col-xs-12">
+                <article class="material-card Teal">
+                    <h2>
+                        <span>Jeff Bridges</span>
+                        <strong>
+                            <i class="fa fa-fw fa-star"></i>
+                            The Big Lebowski
+                        </strong>
+                    </h2>
+                    <div class="mc-content">
+                        <div class="img-container">
+                            <img class="img-responsive" src="https://dl.dropboxusercontent.com/u/2691310/github/material-card/thumb-jeff-bridges.jpg">
+                        </div>
+                        <div class="mc-description">
+                            He comes from a well-known acting family and began his televised acting in 1958 as a child with his father, Lloyd Bridges, and brother, Beau, on television's Sea Hunt ...
+                        </div>
+                    </div>
+                    <a class="mc-btn-action">
+                        <i class="fa fa-bars"></i>
+                    </a>
+                    <div class="mc-footer">
+                        <h4>
+                            Social
+                        </h4>
+                        <a class="fa fa-fw fa-facebook"></a>
+                        <a class="fa fa-fw fa-twitter"></a>
+                        <a class="fa fa-fw fa-linkedin"></a>
+                        <a class="fa fa-fw fa-google-plus"></a>
+                    </div>
+                </article>
+            </div>
+            <div class="col-md-4 col-sm-6 col-xs-12">
+                <article class="material-card Green">
+                    <h2>
+                        <span>Joaquin Phoenix</span>
+                        <strong>
+                            <i class="fa fa-fw fa-star"></i>
+                            Her
+                        </strong>
+                    </h2>
+                    <div class="mc-content">
+                        <div class="img-container">
+                            <img class="img-responsive" src="https://dl.dropboxusercontent.com/u/2691310/github/material-card/thumb-joaquin-phoenix.jpg">
+                        </div>
+                        <div class="mc-description">
+                            is an American actor, producer, music video director, musician and activist. For his work as an artist, Phoenix has received a Grammy Award, a Golden Globe Award and three Academy ...
+                        </div>
+                    </div>
+                    <a class="mc-btn-action">
+                        <i class="fa fa-bars"></i>
+                    </a>
+                    <div class="mc-footer">
+                        <h4>
+                            Social
+                        </h4>
+                        <a class="fa fa-fw fa-facebook"></a>
+                        <a class="fa fa-fw fa-twitter"></a>
+                        <a class="fa fa-fw fa-linkedin"></a>
+                        <a class="fa fa-fw fa-google-plus"></a>
+                    </div>
+                </article>
+            </div>
+            <div class="col-md-4 col-sm-6 col-xs-12">
+                <article class="material-card Light-Green">
+                    <h2>
+                        <span>Tom Hanks</span>
+                        <strong>
+                            <i class="fa fa-fw fa-star"></i>
+                            Forrest Gump
+                        </strong>
+                    </h2>
+                    <div class="mc-content">
+                        <div class="img-container">
+                            <img class="img-responsive" src="https://dl.dropboxusercontent.com/u/2691310/github/material-card/thumb-tom-hanks.jpg">
+                        </div>
+                        <div class="mc-description">
+                            He is known for his roles in Big (1988), Philadelphia (1993), Forrest Gump (1994), Apollo 13 (1995), Saving Private Ryan, You've Got Mail (both 1998), The Green Mile (1999), Cast Away (2000) ...
+                        </div>
+                    </div>
+                    <a class="mc-btn-action">
+                        <i class="fa fa-bars"></i>
+                    </a>
+                    <div class="mc-footer">
+                        <h4>
+                            Social
+                        </h4>
+                        <a class="fa fa-fw fa-facebook"></a>
+                        <a class="fa fa-fw fa-twitter"></a>
+                        <a class="fa fa-fw fa-linkedin"></a>
+                        <a class="fa fa-fw fa-google-plus"></a>
+                    </div>
+                </article>
+            </div>
+            <div class="col-md-4 col-sm-6 col-xs-12">
+                <article class="material-card Lime">
+                    <h2>
+                        <span>Philip Seymour Hoffman</span>
+                        <strong>
+                            <i class="fa fa-fw fa-star"></i>
+                            25th Hour
+                        </strong>
+                    </h2>
+                    <div class="mc-content">
+                        <div class="img-container">
+                            <img class="img-responsive" src="https://dl.dropboxusercontent.com/u/2691310/github/material-card/thumb-philip-seymour-hoffman.jpg">
+                        </div>
+                        <div class="mc-description">
+                            Best known for his distinctive supporting and character roles – typically lowlifes, bullies, and misfits – Hoffman was a regular presence in films from the early 1990s until his death at age 46.
+                        </div>
+                    </div>
+                    <a class="mc-btn-action">
+                        <i class="fa fa-bars"></i>
+                    </a>
+                    <div class="mc-footer">
+                        <h4>
+                            Social
+                        </h4>
+                        <a class="fa fa-fw fa-facebook"></a>
+                        <a class="fa fa-fw fa-twitter"></a>
+                        <a class="fa fa-fw fa-linkedin"></a>
+                        <a class="fa fa-fw fa-google-plus"></a>
+                    </div>
+                </article>
+            </div>
+            <div class="col-md-4 col-sm-6 col-xs-12">
+                <article class="material-card Yellow">
+                    <h2>
+                        <span>Paul Newman</span>
+                        <strong>
+                            <i class="fa fa-fw fa-star"></i>
+                            The Color of Money
+                        </strong>
+                    </h2>
+                    <div class="mc-content">
+                        <div class="img-container">
+                            <img class="img-responsive" src="https://dl.dropboxusercontent.com/u/2691310/github/material-card/thumb-paul-newman.jpg">
+                        </div>
+                        <div class="mc-description">
+                            He won numerous awards, including an Academy Award for his performance in the 1986 film The Color of Money,[3] a BAFTA Award, a Screen Actors Guild Award, a Cannes Film Festival Award, an Emmy Award ...
+                        </div>
+                    </div>
+                    <a class="mc-btn-action">
+                        <i class="fa fa-bars"></i>
+                    </a>
+                    <div class="mc-footer">
+                        <h4>
+                            Social
+                        </h4>
+                        <a class="fa fa-fw fa-facebook"></a>
+                        <a class="fa fa-fw fa-twitter"></a>
+                        <a class="fa fa-fw fa-linkedin"></a>
+                        <a class="fa fa-fw fa-google-plus"></a>
+                    </div>
+                </article>
+            </div>
+            <div class="col-md-4 col-sm-6 col-xs-12">
+                <article class="material-card Amber">
+                    <h2>
+                        <span>Marlon Brando</span>
+                        <strong>
+                            <i class="fa fa-fw fa-star"></i>
+                            The Godfather
+                        </strong>
+                    </h2>
+                    <div class="mc-content">
+                        <div class="img-container">
+                            <img class="img-responsive" src="https://dl.dropboxusercontent.com/u/2691310/github/material-card/thumb-marlon-brando.jpg">
+                        </div>
+                        <div class="mc-description">
+                            He is hailed for bringing a gripping realism to film acting, and is frequently cited as the greatest and most influential actor of all time.[2] A cultural icon, Brando is most famous for his Academy ...
+                        </div>
+                    </div>
+                    <a class="mc-btn-action">
+                        <i class="fa fa-bars"></i>
+                    </a>
+                    <div class="mc-footer">
+                        <h4>
+                            Social
+                        </h4>
+                        <a class="fa fa-fw fa-facebook"></a>
+                        <a class="fa fa-fw fa-twitter"></a>
+                        <a class="fa fa-fw fa-linkedin"></a>
+                        <a class="fa fa-fw fa-google-plus"></a>
+                    </div>
+                </article>
+            </div>
+            <div class="col-md-4 col-sm-6 col-xs-12">
+                <article class="material-card Orange">
+                    <h2>
+                        <span>Kevin Spacey</span>
+                        <strong>
+                            <i class="fa fa-fw fa-star"></i>
+                            American Beauty
+                        </strong>
+                    </h2>
+                    <div class="mc-content">
+                        <div class="img-container">
+                            <img class="img-responsive" src="https://dl.dropboxusercontent.com/u/2691310/github/material-card/thumb-kevin-spacey.jpg">
+                        </div>
+                        <div class="mc-description">
+                            He began his career as a stage actor during the 1980s, before being cast in supporting roles in film and television. He gained critical acclaim in the early 1990s, culminating in his first Academy Award ...
+                        </div>
+                    </div>
+                    <a class="mc-btn-action">
+                        <i class="fa fa-bars"></i>
+                    </a>
+                    <div class="mc-footer">
+                        <h4>
+                            Social
+                        </h4>
+                        <a class="fa fa-fw fa-facebook"></a>
+                        <a class="fa fa-fw fa-twitter"></a>
+                        <a class="fa fa-fw fa-linkedin"></a>
+                        <a class="fa fa-fw fa-google-plus"></a>
+                    </div>
+                </article>
+            </div>
+            <div class="col-md-4 col-sm-6 col-xs-12">
+                <article class="material-card Deep-Orange">
+                    <h2>
+                        <span>Robert De Niro</span>
+                        <strong>
+                            <i class="fa fa-fw fa-star"></i>
+                            Taxy Driver
+                        </strong>
+                    </h2>
+                    <div class="mc-content">
+                        <div class="img-container">
+                            <img class="img-responsive" src="https://dl.dropboxusercontent.com/u/2691310/github/material-card/thumb-robert-de-niro.jpg">
+                        </div>
+                        <div class="mc-description">
+                            His first major film roles were in the sports drama Bang the Drum Slowly (1973) and Martin Scorsese's crime film Mean Streets (1973). In 1974, after being turned down for the role of Sonny Corleone in the crime ...
+                        </div>
+                    </div>
+                    <a class="mc-btn-action">
+                        <i class="fa fa-bars"></i>
+                    </a>
+                    <div class="mc-footer">
+                        <h4>
+                            Social
+                        </h4>
+                        <a class="fa fa-fw fa-facebook"></a>
+                        <a class="fa fa-fw fa-twitter"></a>
+                        <a class="fa fa-fw fa-linkedin"></a>
+                        <a class="fa fa-fw fa-google-plus"></a>
+                    </div>
+                </article>
+            </div>
+            <div class="col-md-4 col-sm-6 col-xs-12">
+                <article class="material-card Brown">
+                    <h2>
+                        <span>Steve Mcqueen</span>
+                        <strong>
+                            <i class="fa fa-fw fa-star"></i>
+                            Papillon
+                        </strong>
+                    </h2>
+                    <div class="mc-content">
+                        <div class="img-container">
+                            <img class="img-responsive" src="https://dl.dropboxusercontent.com/u/2691310/github/material-card/thumb-steve-mcqueen.jpg">
+                        </div>
+                        <div class="mc-description">
+                            Called "The King of Cool", his "anti-hero" persona, developed at the height of the Vietnam War-era counterculture, made him a top box-office draw of the 1960s and 1970s. McQueen received an Academy Award nomination for his ...
+                        </div>
+                    </div>
+                    <a class="mc-btn-action">
+                        <i class="fa fa-bars"></i>
+                    </a>
+                    <div class="mc-footer">
+                        <h4>
+                            Social
+                        </h4>
+                        <a class="fa fa-fw fa-facebook"></a>
+                        <a class="fa fa-fw fa-twitter"></a>
+                        <a class="fa fa-fw fa-linkedin"></a>
+                        <a class="fa fa-fw fa-google-plus"></a>
+                    </div>
+                </article>
+            </div>
+            <div class="col-md-4 col-sm-6 col-xs-12">
+                <article class="material-card Grey">
+                    <h2>
+                        <span>Rugter Hauer</span>
+                        <strong>
+                            <i class="fa fa-fw fa-star"></i>
+                            Blade Runner
+                        </strong>
+                    </h2>
+                    <div class="mc-content">
+                        <div class="img-container">
+                            <img class="img-responsive" src="https://dl.dropboxusercontent.com/u/2691310/github/material-card/thumb-rugter-hauer.jpg">
+                        </div>
+                        <div class="mc-description">
+                            Blonde, blue-eyed, tall and handsome Dutch actor Rutger Hauer has an international reputation for playing everything from romantic leads to action heroes to sinister villains. Hauer was born in Breukelen, a town in the province ...
+                        </div>
+                    </div>
+                    <a class="mc-btn-action">
+                        <i class="fa fa-bars"></i>
+                    </a>
+                    <div class="mc-footer">
+                        <h4>
+                            Social
+                        </h4>
+                        <a class="fa fa-fw fa-facebook"></a>
+                        <a class="fa fa-fw fa-twitter"></a>
+                        <a class="fa fa-fw fa-linkedin"></a>
+                        <a class="fa fa-fw fa-google-plus"></a>
+                    </div>
+                </article>
+            </div>
+            <div class="col-md-4 col-sm-6 col-xs-12">
+                <article class="material-card Blue-Grey">
+                    <h2>
+                        <span>Morgan Freeman</span>
+                        <strong>
+                            <i class="fa fa-fw fa-star"></i>
+                            Glory
+                        </strong>
+                    </h2>
+                    <div class="mc-content">
+                        <div class="img-container">
+                            <img class="img-responsive" src="https://dl.dropboxusercontent.com/u/2691310/github/material-card/thumb-morgan-freeman.jpg">
+                        </div>
+                        <div class="mc-description">
+                            Freeman has received Academy Award nominations for his performances in Street Smart, Driving Miss Daisy, The Shawshank Redemption and Invictus ...
+                        </div>
+                    </div>
+                    <a class="mc-btn-action">
+                        <i class="fa fa-bars"></i>
+                    </a>
+                    <div class="mc-footer">
+                        <h4>
+                            Social
+                        </h4>
+                        <a class="fa fa-fw fa-facebook"></a>
+                        <a class="fa fa-fw fa-twitter"></a>
+                        <a class="fa fa-fw fa-linkedin"></a>
+                        <a class="fa fa-fw fa-google-plus"></a>
+                    </div>
+                </article>
+            </div>
+        </div>
+
+</div>
+</main>
+<!-- Food Menu Modal-->
+<div class="modal fade" id="menu" tabindex="-1" role="">
+    <div class="modal-dialog modal-login" role="document">
+        <div class="modal-content">
+            <div class="card card-signup card-plain">
+                <div class="modal-header">
+<!--               pill buttons-->
+                    <div class="profile-tabs" style="margin-left: 55px; margin-top: 5px">
+                        <ul class="nav nav-pills nav-pills-icons justify-content-center" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" href="#breakfast" role="tab" data-toggle="tab">
+                                    <i class="fa fa-coffee fa-lg" style="color: inherit"></i> Breakfast
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#lunch" role="tab" data-toggle="tab">
+                                    <i class="material-icons">local_pizza</i> Lunch
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" style="height: inherit" href="#dinner" role="tab" data-toggle="tab">
+                                    <i class="fa fa-cutlery fa-lg" style="color: inherit" ></i> Dinner
+                                </a>
+                            </li>
+                            </li>
+
+                        </ul>
+                    </div>
+<!--                 End Pill Buttons-->
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                        <i class="fa fa-times fa-5x" style="color: black"></i>
+                    </button>
+                    </div>
+                </div>
+                <div class="modal-body">
+<!--                    pill buttons content-->
+                    <div class="tab-content tab-space" style="margin-bottom: -70px">
+                        <div class="tab-pane active text-center gallery" id="breakfast" style="margin-top: -30px;">
+                            <div class="card card-nav-tabs " style="padding-top: 10px;">
+                                <div class="card-header card-header-primary">
+                                    Item - 1
+                                </div>
+                                <div class="card-body">
+                                        <p>Sandwich</p>
+                                </div>
+                            </div>
+                            <div class="card card-nav-tabs  " style="padding-top: 20px">
+                                <div class="card-header card-header-primary">
+                                    Item - 2
+                                </div>
+                                <div class="card-body">
+                                    <p>Poha</p>
+                                </div>
+                            </div>
+                            <div class="card card-nav-tabs" style="padding-top: 20px">
+                                <div class="card-header card-header-primary">
+                                    Item - 3
+                                </div>
+                                <div class="card-body ">
+                                    <select class="form-control selectpicker" style="text-align-last: center; text-align: center" data-style="btn btn-link" >
+                                        <option>Choose...</option>
+                                        <option>Coffee</option>
+                                        <option>Tea</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane text-center gallery" id="lunch">
+                            <div class="card card-nav-tabs " style="padding-top: 10px;">
+                                <div class="card-header card-header-primary">
+                                    Item - 1
+                                </div>
+                                <div class="card-body">
+                                    <p>Chapati</p>
+                                </div>
+                            </div>
+                            <div class="card card-nav-tabs  " style="padding-top: 20px">
+                                <div class="card-header card-header-primary">
+                                    Item - 2
+                                </div>
+                                <div class="card-body">
+                                    <p>Rice</p>
+                                </div>
+                            </div>
+                            <div class="card card-nav-tabs  " style="padding-top: 20px">
+                                <div class="card-header card-header-primary">
+                                    Item - 3
+                                </div>
+                                <div class="card-body">
+                                    <p>Daal</p>
+                                </div>
+                            </div>
+                            <div class="card card-nav-tabs text-center " style="padding-top: 20px">
+                                <div class="card-header card-header-primary">
+                                    Item - 4
+                                </div>
+                                <div class="card-body ">
+                                    <select class="form-control selectpicker" style="text-align-last: center; text-align: center" data-style="btn btn-link" >
+                                        <option>Choose...</option>
+                                        <option>Bhindi Sabzi</option>
+                                        <option>Kadhi</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane text-center gallery" id="dinner">
+                            <div class="card card-nav-tabs " style="padding-top: 10px;">
+                                <div class="card-header card-header-primary">
+                                    Item - 1
+                                </div>
+                                <div class="card-body">
+                                    <p>Chapati</p>
+                                </div>
+                            </div>
+                            <div class="card card-nav-tabs  " style="padding-top: 20px">
+                                <div class="card-header card-header-primary">
+                                    Item - 2
+                                </div>
+                                <div class="card-body">
+                                    <p>Rice</p>
+                                </div>
+                            </div>
+                            <div class="card card-nav-tabs  " style="padding-top: 20px">
+                                <div class="card-header card-header-primary">
+                                    Item - 3
+                                </div>
+                                <div class="card-body">
+                                    <p>Daal</p>
+                                </div>
+                            </div>
+                            <div class="card card-nav-tabs text-center " style="padding-top: 20px">
+                                <div class="card-header card-header-primary">
+                                    Item - 4
+                                </div>
+                                <div class="card-body ">
+                                    <select class="form-control selectpicker" style="text-align-last: center; text-align: center" data-style="btn btn-link" >
+                                        <option>Choose...</option>
+                                        <option>Bhata Sabzi</option>
+                                        <option>Chhole</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+<!--                    end pills content-->
+                </div>
+                <div class="modal-footer justify-content-center">
+                    <a href="#pablo" class="btn btn-primary btn-link btn-wd btn-lg">Add To Cart</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!--end modal-->
+
+<!-- Sort by Modal SideBar Left-->
+
+<div class="modal fade left" id="sidebar-left-sort" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+
+                <button class="btn btn-primary " data-dismiss="modal" style="font-family: 'Cabin Sketch',sans-serif; font-size: 2vw; width: 100%; word-spacing: 1vw;">Close X</button>
+
+            </div>
+            <div class="modal-body">
+
+<!--                Order  Radio buttons-->
+                <h1 style="font-family: 'Agency FB',sans-serif; text-align: center; margin-top: 1vw">ORDER</h1>
+
+                <div>
+                <div class="form-check">
+                    <label class="form-check-label" style="color: black; font-family: 'Agency FB' ,sans-serif; font-size: 2.2vw; margin-top: 1vw">
+                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1">Ascending
+                        <span class="circle" style="margin-top: 0.8vw">
+                    <span class="check"></span>
+                  </span>
+                    </label>
+                </div>
+                <div class="form-check">
+                    <label class="form-check-label" style="color: black; font-family: 'Agency FB' ,sans-serif; font-size: 2.2vw; margin-top: 1vw">
+                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2" checked> Descending
+                        <span class="circle" style="margin-top: 0.8vw">
+                    <span class="check"></span>
+                  </span>
+                    </label>
+                </div>
+            </div>
+<!--              end  Order-->
+<!--            divider-->
+                <div class="divider div-transparent div-arrow-down" style="margin-top: 20px"></div>
+<!--            Sort by Radio Buttons-->
+                <h1 style="font-family: 'Agency FB',sans-serif; text-align: center; margin-top: 2.5vw">SORT BY</h1>
+
+                <div style="margin-top: 1vw">
+                    <div class="form-check">
+                        <label class="form-check-label" style="color: black; font-family: 'Agency FB' ,sans-serif; font-size: 2.2vw; margin-top: 1vw">
+                            <input class="form-check-input" type="radio" name="exampleRadios1" id="exampleRadios3" value="option1">Price
+                            <span class="circle" style="margin-top: 0.8vw">
+                    <span class="check"></span>
+                  </span>
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <label class="form-check-label" style="color: black; font-family: 'Agency FB' ,sans-serif; font-size: 2.2vw; margin-top: 1vw">
+                            <input class="form-check-input" type="radio" name="exampleRadios1" id="exampleRadios4" value="option2" checked> Rating
+                            <span class="circle" style="margin-top: 0.8vw">
+                    <span class="check"></span>
+                  </span>
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <label class="form-check-label" style="color: black; font-family: 'Agency FB' ,sans-serif; font-size: 2.2vw; margin-top: 1vw">
+                            <input class="form-check-input" type="radio" name="exampleRadios1" id="exampleRadios5" value="option3">Popularity
+                            <span class="circle" style="margin-top: 0.8vw">
+                    <span class="check"></span>
+                  </span>
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <label class="form-check-label" style="color: black; font-family: 'Agency FB' ,sans-serif; font-size: 2.2vw; margin-top: 1vw">
+                            <input class="form-check-input" type="radio" name="exampleRadios1" id="exampleRadios6" value="option4"> Reviews
+                            <span class="circle" style="margin-top: 0.8vw">
+                    <span class="check"></span>
+                  </span>
+                        </label>
+                    </div>
+                </div>
+<!--                end sort-->
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Filter Modal Sidebar Left -->
+<div class="modal fade left" id="sidebar-left-filter" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+
+                <button class="btn btn-primary " data-dismiss="modal" style="font-family: 'Cabin Sketch',sans-serif; font-size: 2vw; width: 100%; word-spacing: 1vw">Close X</button>
+
+            </div>
+            <div class="modal-body">
+                <h1 style="font-family: 'Agency FB',sans-serif; text-align: center; ">PRICE</h1>
+<!--               Price Slider Code-->
+                <div id="sliderRegular" class="slider">
+                </div>
+
+                <label for="input-select1" style="color: black; font-family: 'Agency FB' ,sans-serif; font-size: 2.2vw; margin-top: 1vw">Min. Price</label><select id="input-select1" style="padding: 7px; margin: 15px 25px 5px; width: 80px;"></select>
+                <label for="input-select2" style="color: black; font-family: 'Agency FB' ,sans-serif; font-size: 2.2vw; margin-top: 1vw">Max. Price</label><select id="input-select2" style="padding: 7px; margin: 15px 22px 5px; width: 80px;"></select>
+<!--            Price Slider Code End-->
+<!--                divider-->
+                <div class="divider div-transparent div-arrow-down" style="margin-top: 20px"></div>
+<!--            Preferences Check Boxes-->
+                <h1 style="font-family: 'Agency FB',sans-serif; text-align: center; margin-top: 2.5vw">PREFERENCES</h1>
+
+                <div style="margin-top: 1vw">
+                <div class="form-check" >
+                    <label class="form-check-label" style="color: black; font-family: 'Agency FB' ,sans-serif; font-size: 2.2vw; margin-top: 1vw">
+                        <input class="form-check-input" type="checkbox" value="" checked> Vegetarian
+                        <span class="form-check-sign">
+                    <span class="check"></span>
+                  </span>
+                    </label>
+                </div>
+                <div class="form-check">
+                    <label class="form-check-label" style="color: black; font-family: 'Agency FB' ,sans-serif; font-size: 2.2vw; margin-top: 2vw">
+                        <input class="form-check-input" type="checkbox" value="" checked> Non-Vegetarian
+                        <span class="form-check-sign">
+                    <span class="check"></span>
+                  </span>
+                    </label>
+                </div>
+                <div class="form-check">
+                    <label class="form-check-label" style="color: black; font-family: 'Agency FB',sans-serif; font-size: 2.2vw; margin-top: 2vw">
+                        <input class="form-check-input" type="checkbox" value="" checked> Jain
+                        <span class="form-check-sign">
+                    <span class="check"></span>
+                  </span>
+                    </label>
+                </div>
+            </div>
+<!--                Preferences End-->
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- script to hide top bar when scrolling down -->
+<script src="Javascript/TopScrolling.js"></script>
+<!--end-->
+<script src="Javascript/Core%20js/jquery-3.4.1.min.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js'></script>
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+
+
+<script src="Javascript/Core%20js/wNumb.js"></script>
+
+<!--   Core JS Files   -->
+<script src="Javascript/Core%20js/jquery.min.js" type="text/javascript"></script>
+<script src="Javascript/Core%20js/popper.min.js" type="text/javascript"></script>
+<script src="Javascript/Core%20js/bootstrap-material-design.min.js" type="text/javascript"></script>
+<script src="Javascript/Core%20js/moment.min.js"></script>
+<!-- slider -->
+<script src="Javascript/Core%20js/nouislider.min.js" type="text/javascript"></script>
+<script src="Javascript/Core%20js/material-kit.js?v=2.0.5" type="text/javascript"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script type="text/javascript" src="Javascript/sidenav.js" charset="UTF-8"></script>
+<script src="Javascript/side-modal.js"></script>
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="Javascript/Core%20js/material-cards.js"></script>
+<script src="Javascript/login_navigation.js"></script>
+<script>
+    $('#likebutton button').click(function(){
+        $(this).find('i').toggleClass('fa-heart-o fa-heart')
+    });
+</script>
+</body>
+</html>

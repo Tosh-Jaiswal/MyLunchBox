@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="JavaScriptLibraryMappings">
+    <file url="PROJECT" libraries="{ScrollMagic, TweenMax, a076d05399, animation.gsap, bootstrap, debug.addIndicators, jquery, jquery-1.11.3, jquery-3.3.1.slim, jquery.bootpag, jquery.validate, masonry.pkgd, mixitup, popper}" />
+  </component>
+</project>
