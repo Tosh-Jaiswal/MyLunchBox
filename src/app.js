@@ -5,6 +5,7 @@ const path = require('path')
 const hbs = require('hbs')
 
 const app = express()
+const port = process.env.PORT || 3000
 const publicDirectoryPath = path.join(__dirname, '../public')
 app.use(express.json())
 
@@ -31,8 +32,8 @@ app.use(deliveryboyRouter);
 app.use(frontendRoute);
 
 //listining to port 3000
-app.listen('3000', () =>{
-  console.log("Server is up on port 3000")
+app.listen(port, () =>{
+  console.log("Server is up on port "+port)
 });
 
 //to start the server write npm start on your terminal and write http://localhost:3000/ on your browser

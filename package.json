@@ -4,9 +4,7 @@
   "description": "This is a food delivery web app where college students and working professionls can order home made food.",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node src/app.js",
-    "dev": "nodemon src/app.js"
+    "start": "node src/app.js"
   },
   "author": "sanket,tosh",
   "license": "ISC",
