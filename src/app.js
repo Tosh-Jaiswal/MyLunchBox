@@ -1,5 +1,5 @@
 const express = require("express")
-//require('../db/mongoose')
+require('../db/mongoose')
 const bodyParser=require("body-parser")
 const path = require('path')
 const hbs = require('hbs')
@@ -8,18 +8,19 @@ const app = express()
 const port = process.env.PORT || 3000
 const publicDirectoryPath = path.join(__dirname, '../public')
 app.use(express.json())
+app.use(bodyParser.json())
 
 // //routing
-const authRoutes = require("../routes/auth"),
-      auntyRouter = require("../routes/aunty"),
-      bhukkadRouter = require('../routes/bhukkad'),
-      deliveryboyRouter = require('../routes/deliveryboy'),
+const authRoutes = require("../routes/auth")
+      auntyRouter = require("../routes/aunty")
+      bhukkadRouter = require('../routes/bhukkad')
+      deliveryboyRouter = require('../routes/deliveryboy')
       frontendRoute = require('../routes/frontendRoutes') 
 
 // //connection
 app.set("view engine", "hbs")
-app.use(bodyParser.urlencoded({extended: true}));
-app.use(express.static("./public"));
+app.use(bodyParser.urlencoded({extended: true}))
+app.use(express.static("./public"))
 app.use(express.static(publicDirectoryPath))
 
 

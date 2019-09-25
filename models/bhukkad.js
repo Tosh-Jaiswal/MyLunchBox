@@ -2,11 +2,18 @@ const mongoose = require("mongoose")
 const validator = require('validator')
 
 const Bhukkad = mongoose.model('Bhukkad', {
-    name: {
+    Firstname: {
         type: String,
         required: true,
         trim: true
     },
+
+    Lastname: {
+        type: String,
+        required: true,
+        trim: true
+    },
+
     email: {
         type : String,
         unique: true,

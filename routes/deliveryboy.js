@@ -2,16 +2,14 @@ const express = require('express')
 const DeliveryBoy = require('../models/deliveryboy')
 const router = new express.Router()
 
-router.post('/deliveryboys', async (req, res) => {
+router.post('/deliveryboys', (req, res) => {
     const deliveryboy = new DeliveryBoy(req.body)
-
-    try {
-        
-        await deliveryboy.save()
-        res.status(201).send(deliveryboy)
-    } catch (e) {
+    deliveryboy.save()
+      .then(item => {res.status(201).send('Item saved')
+    }) 
+      .catch (err => {
         res.status(400).send(e)
-    }
+    })
 })
 
 router.get('/deliveryboys', async (req, res) => {

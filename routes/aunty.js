@@ -2,15 +2,14 @@ const express = require('express')
 const FoodProvider = require('../models/aunty')
 const router = new express.Router()
 
-router.post('/foodProviders', async (req, res) => {
+router.post('/foodProviders', (req, res) => {
     const foodProvider = new FoodProvider(req.body)
-
-    try {
-        await foodProvider.save()
-        res.status(201).send(foodProvider)
-    } catch (e) {
-        res.status(400).send(e)
-    }
+    foodProvider.save()
+    .then(item => {res.status(201).send('Item saved')
+   }) 
+    .catch (err => {
+      res.status(400).send(e)
+   })
 })
 
 router.get('/foodProviders', async (req, res) => {

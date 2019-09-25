@@ -2,15 +2,14 @@ const express = require('express')
 const Hostler = require('../models/bhukkad')
 const router = new express.Router()
 
-router.post('/hostlers', async (req, res) => {
+router.post('/hostlers', (req, res) => {
     const hostler = new Hostler(req.body)
-
-    try {
-        await hostler.save()
-        res.status(201).send(hostler)
-    } catch (e) {
-        res.status(400).send(e)
-    }
+    hostler.save()
+    .then(item => {res.status(201).send('Item saved')
+   }) 
+    .catch (err => {
+      res.status(400).send(e)
+   })
 })
 
 router.get('/hostlers', async (req, res) => {

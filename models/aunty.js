@@ -2,11 +2,18 @@ const mongoose = require("mongoose")
 const validator = require("validator")
 
 const Aunty = mongoose.model('Aunty', {
-    name: {
+    Firstname: {
         type: String,
         required: true,
         trim: true
     },
+
+    Lastname: {
+        type: String,
+        required: true,
+        trim: true
+    },
+
     email: {
         type: String,
         unique: true,
@@ -27,16 +34,6 @@ const Aunty = mongoose.model('Aunty', {
         validate(value){
             if (value.toLowerCase().includes('password')){
                 throw new Error('Please try another password')
-            }
-        }
-    },
-    confirmPassword: {
-        type: String,
-        required: true,
-        trim: true,
-        validate(value){
-            if (!value.toLowerCase()===password.value){
-                throw new Error ('Password does not match!')
             }
         }
     },

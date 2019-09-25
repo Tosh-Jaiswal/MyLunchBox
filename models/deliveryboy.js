@@ -2,11 +2,41 @@ const mongoose = require("mongoose")
 const validator = require('validator')
 
 const DeliveryBoy = mongoose.model('DeliveryBoy', {
-    name: {
+    firstName: {
         type: String,
         required: true,
         trim: true
     },
+
+    phoneNumber: {
+        type: String,
+        required: true,
+        trim: true,
+        validate(value){
+            if(!validator.isMobilePhone(value)){
+                throw new error ('Please enter a valid mobile number.')
+            }
+        }
+    },
+
+    password: {
+        type: String,
+        required: true,
+        minlength: 7,
+        trim: true,
+        validate(value){
+            if (value.toLowerCase().includes('password')){
+                throw new error('password error')
+            }
+        }
+    },
+
+    lastName: {
+        type: String,
+        required: true,
+        trim: true
+    },
+
     email: {
         type : String,
         unique: true,
@@ -19,27 +49,15 @@ const DeliveryBoy = mongoose.model('DeliveryBoy', {
             }
         }
     },
-    password: {
-        type: String,
-        required: true,
-        minlength: 7,
-        trim: true,
-        validate(value){
-            if (value.toLowerCase().includes('password')){
-                throw new error('password error')
-            }
-        }
-    },
-    mobileNumber: {
+
+    confirmPassword: {
         type: String,
         required: true,
         trim: true,
-        validate(value){
-            if(!validator.isMobilePhone(value)){
-                throw new error ('Please enter a valid mobile number.')
-            }
-        }
-    },
+        lowercase: true
+    }
+    
+    
     // address: {
     //     type: String,
     //     required: true
