@@ -154,7 +154,7 @@ if (document.getElementById('male').checked===true){
 if (document.getElementById('female').checked===true){
     var female = true;
 }
-if (document.getElementById('other').checked===true){
+if (document.getElementById('othergender').checked===true){
     var othergender = true;
 }
 

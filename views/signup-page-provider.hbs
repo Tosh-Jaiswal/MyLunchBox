@@ -33,6 +33,7 @@
   <link href="CSS/material-kit.css?v=2.0.5" rel="stylesheet" />
   <link rel="stylesheet" href="CSS/sidenav.css">
   <link rel="stylesheet" href="CSS/TopBar.css">
+  <link rel="stylesheet" href="CSS/load.css">
 </head>
 <!-- top menu -->
 <div id="btn-group" style="height: 9vh; background-color: rgba(0,0,0,0);">
@@ -51,7 +52,7 @@
       <div class="row" style="margin-top: 5vw">
         <div class=" col-lg-9 ml-auto mr-auto" style="max-width: 650px; top: -5px" >
           <div class="card card-login" style="width: 100%; height: 100%; top: 2px">
-            <form class="form" method="POST" action="/foodProviders" >
+            <form class="form" method="POST" action="/foodProviders"  >
               <div class="card-header card-header-primary text-center">
                 <h4 class="card-title" style="font-family: 'Agency FB',serif; font-size: 200%">Sign Up</h4>
                 <div class="social-line">
@@ -75,7 +76,7 @@
                       <i class="fa fa-user fa-2x"></i>
                     </span>
                   </div>
-                  <input type="text" class="form-control" placeholder="First Name..." required>
+                  <input type="text" class="form-control" name="firstName" placeholder="First Name..." required>
                 </div>
                 <div class="input-group" >
                   <div class="input-group-prepend">
@@ -83,7 +84,7 @@
                       <i class="fa fa-phone fa-2x"></i>
                     </span>
                   </div>
-                  <input type="tel" pattern="[1-9]{1}[0-9]{9}" class="form-control" placeholder="Phone Number..." required>
+                  <input type="tel" pattern="[1-9]{1}[0-9]{9}" name="phoneNumber" class="form-control" placeholder="Phone Number..." required>
                 </div>
                 <div class="input-group" >
                   <div class="input-group-prepend">
@@ -91,7 +92,7 @@
                       <i class="fa fa-lock fa-2x"></i>
                     </span>
                   </div>
-                  <input type="password" class="form-control" placeholder="Password..." required>
+                  <input type="password" class="form-control" name="password" placeholder="Password..." required>
                 </div>
               </div>
                 <div class="card-body col-lg-6" style="top: 10px; max-width: 50%" >
@@ -101,7 +102,7 @@
                       <i class="fa fa-user fa-2x"></i>
                     </span>
                     </div>
-                    <input type="text" class="form-control" placeholder="Last Name...">
+                    <input type="text" class="form-control" name="lastName" placeholder="Last Name...">
                   </div>
                   <div class="input-group" >
                     <div class="input-group-prepend">
@@ -109,7 +110,7 @@
                       <i class="fa fa-envelope fa-lg"></i>
                     </span>
                     </div>
-                    <input type="email" class="form-control" placeholder="Email..." required>
+                    <input type="email" class="form-control" name="email" placeholder="Email..." required>
                   </div>
                   <div class="input-group" >
                     <div class="input-group-prepend">
@@ -117,7 +118,7 @@
                       <i class="fa fa-lock fa-2x"></i>
                     </span>
                     </div>
-                    <input type="password" class="form-control" placeholder="Confirm Password..." required>
+                    <input type="password" class="form-control" name="confirmPassword" placeholder="Confirm Password..." required>
                   </div>
                 </div>
               </div>
@@ -132,6 +133,26 @@
   </div>
 </body>
 </main>
+<!--Preloader-->
+<div class="loader-wrapper">
+  <div class='loader loader3'>
+    <div>
+      <div>
+        <div>
+          <div>
+            <div>
+              <div>
+                <div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
   <!--   Core JS Files   -->
   <script src="Javascript/Core%20js/jquery.min.js" type="text/javascript"></script>
   <script src="Javascript/Core%20js/popper.min.js" type="text/javascript"></script>
@@ -142,4 +163,5 @@
 
 <script src="Javascript/TopScrolling.js"></script>
 <script src="Javascript/sidenav.js"></script>
+<script src="Javascript/loader.js"></script>
 </html>

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--    browser Tab icon-->
+    <link rel="icon" type="image/png" href="img/logo2.png">
+    <!--    end-->
+
+    <link href="http://allfont.net/allfont.css?fonts=agency-fb" rel="stylesheet" type="text/css" />
+
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC&display=swap" rel="stylesheet">
+
+    <link href="http://allfont.net/allfont.css?fonts=agency-fb-bold" rel="stylesheet" type="text/css" />
+
+    <link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Amatic+SC">
+    <link rel="stylesheet" href="CSS/JellyButton.css">
+    <link rel="stylesheet" href="CSS/TopBar.css">
+    <link rel="stylesheet" href="CSS/sidenav.css">
+    <link rel="stylesheet" href="CSS/footer.css">
+    <link rel="stylesheet"  href="CSS/w3.css">
+    <link rel="stylesheet" href="CSS/cart.css">
+    <link rel="stylesheet" href="CSS/load.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width = device-width, initial-scale=1.0" >
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>
+        Lunchbox
+    </title>
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
+    <!--     Fonts and icons     -->
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+    <!-- CSS Files -->
+    <link href="CSS/material-kit.css?v=2.0.5" rel="stylesheet" />
+
+
+    <style>
+        /*disable scrolling*/
+        html, body {margin: 0; height: 100%; overflow: hidden}
+
+        a:hover{
+            text-decoration: none;
+            color: black;
+        }
+        /* code to remove blue outlines during non key board accessing */
+        *:focus:not(.focus-visible) {
+            outline: none;
+        }
+        /* END */
+        @media screen and (min-width: 600px){
+
+            #sideitem5 {
+                display: none;
+            }
+            #sideitem6 {
+                display: none;
+            }
+        }
+        @media screen and (max-width: 600px)
+        {
+
+
+        }
+    </style>
+</head>
+<body class="profile-page">
+<!--Top bar-->
+<div id="btn-group">
+    <button  class="button2" id="btn" style="float: right; height: 105%; width: 7vw; z-index: 300 ; position: relative; margin-right: 1vh ">
+        <div class="bar top"></div>
+        <div class="bar middle"></div>
+        <div class="bar bottom"></div>
+    </button>
+
+    <button class="button" onclick="window.location.href = 'Main'" style="opacity: 1; visibility: visible; float: left; "><img src ="img/logo2.png" alt ="logo" style="width: 5vh; height: 7vh; margin-top: -0.5vw" ></button>
+    <button class="button" onclick="window.location.href = 'signup-page-user'" >Sign up</button>
+    <button class="button" onclick="window.location.href = 'login-page?ab=5'" >Log In</button>
+
+</div>
+
+<!-- nav-drawer -->
+
+
+<div  class ="sidebar" >
+    <ul class="sidebar-list" style="font-family: 'Amatic SC',serif; font-size: 1.5vw">
+        <li id="sideitem1" class="sidebar-item"><a href="profile-page" class="sidebar-anchor">Account</a></li>
+        <li id="sideitem2" class="sidebar-item"><a href="profile-page" class="sidebar-anchor">Order History</a></li>
+        <li id="sideitem3" class="sidebar-item"><a href="profile-page" class="sidebar-anchor">Favourites</a></li>
+        <li id="sideitem5" class="sidebar-item"><a href="signup-page-user" class="sidebar-anchor">Sign Up</a></li>
+        <li id="sideitem6" class="sidebar-item"><a href="login-page" class="sidebar-anchor">Log In</a></li>
+    </ul>
+</div>
+<main>
+    <div class="page-header header-filter" data-parallax="true" style="background-image: url('img/city-profile.jpg'); height: 120%"></div>
+    <div class="main main-raised ml-auto mr-auto" style="top: -95%; width: 70%; height: 80%; background-image: url('img/1025.png'); ">
+        <div class="profile-content">
+            <div class="container" style="padding-top: 5%" >
+
+
+
+                <section class="shopping-cart pre-scrollable" >
+                    <ol class="ui-list shopping-cart--list" id="shopping-cart--list" style="margin-left: -50px" >
+
+                        <script id="shopping-cart--list-item-template" type="text/template">
+                            <li class="_grid shopping-cart--list-item">
+
+                                <div class="_column product-info">
+                                    <h4 class="product-name" style="font-family: 'Agency FB',sans-serif">{{=name}}</h4>
+                                    <div class="row">
+                                        <div class="form-check  col-md-3" style="margin-left: 20px">
+                                            <label class="form-check-label" style="font-family: 'Agency FB',sans-serif; font-size: 1.5vw">
+                                                <input data-price="{{=breakfast_price}}" class="form-check-input" id="breakfast_check" type="checkbox" value="" checked>
+                                                Breakfast
+                                                <span class="form-check-sign">
+                                                <span class="check"></span>
+                                            </span>
+                                            </label>
+                                        </div>
+                                        <div class="price product-single-price col-md-3" id="breakfast">₹{{=breakfast_price}}</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-check col-md-3" style="margin-left: 20px">
+                                            <label class="form-check-label" style="font-family: 'Agency FB',sans-serif; font-size: 1.5vw">
+                                                <input data-price="{{=lunch_price}}" class="form-check-input" id="lunch_check" type="checkbox" value="" checked>
+                                                Lunch
+                                                <span class="form-check-sign">
+                                                <span class="check"></span>
+                                            </span>
+                                            </label>
+                                        </div>
+                                        <div class="price product-single-price col-md-3">₹{{=lunch_price}}</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-check col-md-3" style="margin-left: 20px" >
+                                            <label class="form-check-label" style="font-family: 'Agency FB',sans-serif; font-size: 1.5vw">
+                                                <input data-price="{{=dinner_price}}" class="form-check-input" id="dinner_check" type="checkbox" value="" checked>
+                                                Dinner
+                                                <span class="form-check-sign">
+                                                    <span class="check"></span>
+                                                </span>
+                                            </label>
+                                        </div>
+                                        <div class="price product-single-price col-md-3">₹{{=dinner_price}}</div>
+                                    </div>
+                                </div>
+
+                                <div class="_column product-modifiers" data-breakfast-price="{{=breakfast_price}}" data-lunch-price="{{=lunch_price}}" data-dinner-price="{{=dinner_price}}">
+                                    <div class="_grid">
+                                        <button class="_btn _column product-subtract">&minus;</button>
+                                        <div class="_column product-qty">1</div>
+                                        <button class="_btn _column product-plus">&plus;</button>
+                                    </div>
+                                    <div class="price product-total-price">₹{{=all}}</div>
+                                    <button class="_btn entypo-trash product-remove" style="margin-top: 0">Remove</button>
+
+                                </div>
+                            </li>
+                        </script>
+
+                    </ol>
+
+
+
+                </section>
+                <footer class="_grid cart-totals" style="padding-left: 21%; margin-top: 30px; ">
+                <div class="_column subtotal" id="subtotalCtr">
+                    <div class="cart-totals-key">Subtotal</div>
+                    <div class="cart-totals-value">$0.00</div>
+                </div>
+                <div class="_column shipping" id="shippingCtr">
+                    <div class="cart-totals-key">Shipping</div>
+                    <div class="cart-totals-value">$0.00</div>
+                </div>
+                <div class="_column taxes" id="taxesCtr">
+                    <div class="cart-totals-key">GST (6%)</div>
+                    <div class="cart-totals-value">$0.00</div>
+                </div>
+                <div class="_column total" id="totalCtr">
+                    <div class="cart-totals-key">Total</div>
+                    <div class="cart-totals-value">$0.00</div>
+                </div>
+                <div class="_column checkout">
+                    <button class="_btn checkout-btn entypo-forward">Checkout</button>
+                </div>
+            </footer>
+
+            </div>
+
+        </div>
+    </div>
+
+
+</main>
+</body>
+<!--preloader-->
+<div class="loader-wrapper">
+    <div class='loader loader3'>
+        <div>
+            <div>
+                <div>
+                    <div>
+                        <div>
+                            <div>
+                                <div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--   Core JS Files   -->
+<script src="Javascript/Core%20js/jquery-3.4.1.min.js" type="text/javascript"></script>
+<script src="Javascript/Core%20js/jquery.min.js" type="text/javascript"></script>
+<script src="Javascript/Core%20js/popper.min.js" type="text/javascript"></script>
+<script src="Javascript/Core%20js/bootstrap-material-design.min.js" type="text/javascript"></script>
+<script src="Javascript/Core%20js/moment.min.js"></script>
+<!-- Control Center for Material Kit: parallax effects, scripts for the example pages etc -->
+<script src="Javascript/Core%20js/material-kit.js?v=2.0.5" type="text/javascript"></script>
+<script src="Javascript/TopScrolling.js"></script>
+<script src="Javascript/sidenav.js"></script>
+<script src="Javascript/cart.js"></script>
+<script src="Javascript/loader.js"></script>
+</html>

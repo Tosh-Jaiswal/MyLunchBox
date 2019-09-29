@@ -2,43 +2,14 @@ const mongoose = require("mongoose")
 const validator = require("validator")
 
 const Aunty = mongoose.model('Aunty', {
-    Firstname: {
+    firstName: {
         type: String,
         required: true,
         trim: true
     },
 
-    Lastname: {
+    phoneNumber: {
         type: String,
-        required: true,
-        trim: true
-    },
-
-    email: {
-        type: String,
-        unique: true,
-        required: true,
-        trim: true,
-        lowercase: true,
-        validate(value) {
-            if(!validator.isEmail(value)) {
-                throw new Error('Email is invalid')
-            }
-        }
-    },
-    password: {
-        type: String,
-        required: true,
-        minlength: 7,
-        trim: true,
-        validate(value){
-            if (value.toLowerCase().includes('password')){
-                throw new Error('Please try another password')
-            }
-        }
-    },
-    mobileNumber: {
-        type: Number,
         required: true,
         trim: true,
         validate(value){
@@ -47,25 +18,44 @@ const Aunty = mongoose.model('Aunty', {
             }
         }
     },
-    idproof:{
+
+    password: {
         type: String,
-       // required: true,
+        required: true,
+        minlength: 7,
         trim: true,
-        validate(value) {
-            if(!validator.isIdentityCard(value)){
-                throw new error ('Please enter a valid idproof.')
+        validate(value){
+            if (value.toLowerCase().includes('password')){
+                throw new error('password error')
             }
         }
     },
-    address: {
-        type: String,
-        required: true
-    },
-    pincode: {
+
+    lastName: {
         type: String,
         required: true,
         trim: true
+    },
+
+    email: {
+        type : String,
+        unique: true,
+        required: true,
+        trim: true,
+        lowercase: true,
+        validate(value) {
+            if(!validator.isEmail(value)){
+                throw new Error('Email is invalid')
+            }
         }
+    },
+
+    confirmPassword: {
+        type: String,
+        required: true,
+        trim: true,
+        lowercase: true
+    }
 })
 
 //const Aunty = mongoose.model('Aunty', auntySchema)

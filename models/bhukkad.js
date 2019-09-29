@@ -2,13 +2,36 @@ const mongoose = require("mongoose")
 const validator = require('validator')
 
 const Bhukkad = mongoose.model('Bhukkad', {
-    Firstname: {
+    firstName: {
         type: String,
         required: true,
         trim: true
     },
 
-    Lastname: {
+    phoneNumber: {
+        type: String,
+        required: true,
+        trim: true,
+        validate(value){
+            if(!validator.isMobilePhone(value)){
+                throw new error ('Please enter a valid mobile number.')
+            }
+        }
+    },
+
+    password: {
+        type: String,
+        required: true,
+        minlength: 7,
+        trim: true,
+        validate(value){
+            if (value.toLowerCase().includes('password')){
+                throw new error('password error')
+            }
+        }
+    },
+
+    lastName: {
         type: String,
         required: true,
         trim: true
@@ -26,30 +49,12 @@ const Bhukkad = mongoose.model('Bhukkad', {
             }
         }
     },
-    password: {
-        type: String,
-        required: true,
-        minlength: 7,
-        trim: true,
-        validate(value){
-            if (value.toLowerCase().includes('password')){
-                throw new error('password error')
-            }
-        }
-    },
-    mobileNumber: {
+
+    confirmPassword: {
         type: String,
         required: true,
         trim: true,
-        validate(value){
-            if(!validator.isMobilePhone(value)){
-                throw new error ('Please enter a valid mobile number.')
-            }
-        }
-    },
-    address: {
-        type: String,
-        required: true
+        lowercase: true
     }
 })
 

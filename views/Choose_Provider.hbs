@@ -19,21 +19,25 @@
     <link rel="stylesheet" href="CSS/JellyButton.css">
     <link rel="stylesheet" href="CSS/filter.css">
     <link rel="stylesheet" href="CSS/search_style.css">
+    <link rel="stylesheet" href="CSS/load.css">
+    <link rel="stylesheet" href="CSS/cartCounter.css">
     <script src="Javascript/Core%20js/jquery-3.4.1.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="Javascript/Core%20js/nouislider.js"></script>
     <script src="Javascript/search_script.js"></script>
     <script src="Javascript/slider.js"></script>
+
     <!--script to scroll to top on refresh-->
-<!--    <script>-->
-<!--        window.onbeforeunload = function () {-->
-<!--            window.scrollTo(0, 0);-->
-<!--        }-->
-<!--    </script>-->
+    <script>
+        window.onbeforeunload = function () {
+            window.scrollTo(0, 0);
+        }
+    </script>
     <title>Lunchbox</title>
 
     <style>
+
 
         /* code to remove blue outlines during non key board accessing */
         *:focus:not(.focus-visible) {
@@ -111,7 +115,7 @@
         }
     </style>
 </head>
-<body  class="index-page sidebar-collapse" style="background-color: #00cc90">
+<body  class="index-page " style="background-color: #00cc90">
 <!-- top menu -->
 <div id="btn-group">
     <button  class="button2" id="btn" style="float: right; height: 6vw; width: 7vw; z-index: 300 ; position: relative; margin-right: 1vh ">
@@ -120,7 +124,7 @@
         <div class="bar bottom"></div>
     </button>
 
-    <button class="button" style="opacity: 1; visibility: visible; float: left; "><img src ="img/logo2.png" alt ="logo" style="margin-top: -1vw; width: 3vw; height: 3.5vw" onclick="window.location.href = 'Main'" ></button>
+    <button class="button" style="opacity: 1; visibility: visible; float: left; "><img src ="img/logo2.png" alt ="logo" style="margin-top: -1vw; width: 2.7vw; height: 3.5vw" onclick="window.location.href = 'Main'" ></button>
     <button class="button" onclick="window.location.href = 'signup-page-user'">Sign up</button>
     <button class="button" onclick="window.location.href = 'login-page?ab=5'">Log In</button>
 
@@ -195,29 +199,46 @@
         </svg>
                 <div class="go-icon"><i class="fa fa-arrow-right"></i></div>
             </div>
-            <button  class="btn btn-primary"  style=" margin-left: 0.7vw; height: 6vw"><i style="font-size: 3vw" class="fa fa-shopping-cart"></i></button>
+<!--            <button  class="btn btn-primary" onclick="window.location.href = 'cart'"  style=" margin-left: 0.7vw; height: 6vw"><i style="font-size: 3vw" class="fa fa-shopping-cart"></i><span class="badge badge-pill badge-danger">4</span></button>-->
+<button class="btn btn-primary" style="height: inherit" onclick="window.location.href = 'cart'" >
+    <span  class="cart-badge" id="targetEl" value="0">0</span>
 
+
+    <svg class="cart-icon" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 202 167.3" style="enable-background:new 0 0 202 167.3;" xml:space="preserve">
+			<style type="text/css">
+				.st0{fill:#FFFFFF;}
+			</style>
+        <g>
+				<g>
+					<path class="st0" d="M156.5,107.5H66.5c-3.4,0-6.3-2.4-7-5.6L45.8,37.2l-12.9-1c-3.9-0.3-6.9-3.7-6.6-7.6c0.3-3.9,3.7-6.9,7.6-6.6l18.3,1.4c3.2,0.2,5.8,2.5,6.4,5.6l13.7,64.2h78.4L161,45.5c0.8-3.9,4.6-6.3,8.5-5.5c3.9,0.8,6.3,4.6,5.5,8.5l-11.5,53.4C162.7,105.1,159.8,107.5,156.5,107.5z" />
+				</g>
+            <circle class="st0" cx="82.1" cy="130.8" r="14.2" />
+            <circle class="st0" cx="142" cy="130.8" r="14.2" />
+			</g>
+		</svg>
+</button>
 
         </nav>
         <div class="row active-with-click">
             <div class="col-md-4 col-sm-6 col-xs-12">
                 <article class="material-card Red" >
-                    <h2>
-                        <span>Provider_Name</span>
-                        <div class="row">
-                        <strong class="col-md-9">
+                    <h2><div class="row">
+                        <span class="col-md-9">Provider_Name</span>
+                        <div class="col-md-2" id="likebutton">
+                        <button class="btn btn-link"  style="background-color: inherit; margin-top: -8px">
+                            <i class="fa fa-heart-o fa-lg" ></i>
+                        </button>
+                    </div>
+                    </div>
+                        <strong >
                             <i class="fa fa-fw fa-star"></i>
                             <i class="fa fa-fw fa-star"></i>
                             <i class="fa fa-fw fa-star"></i>
                             <i class="fa fa-fw fa-star-half-o"></i>
                             <i class="fa fa-fw fa-star-o"></i>
                              </strong>
-                            <div class="col-md-2" id="likebutton">
-                        <button class="btn btn-link"  style="background-color: inherit; margin-top: -10px">
-                            <i class="fa fa-heart-o fa-lg" ></i>
-                        </button>
-                            </div>
-                        </div>
+
+
                     </h2>
                     <div class="mc-content">
                         <div class="img-container">
@@ -231,11 +252,12 @@
                         <i class="fa fa-bars"></i>
                     </a>
                     <div class="mc-footer">
+                        <h4 style="margin-top: -30px" >Taking Orders Before - 11:00 A.M.</h4>
                         <h4>23</h4>
                         <h4 style="margin-left: 35px">
                               Orders Completed
                         </h4>
-                        <button class="btn  btn-primary btn-round"data-toggle="modal" data-target="#menu" style="background-color: #ff0000;  width: 70%;height: 70%; margin-left: 30px; margin-top: 1px" >Menu</button>
+                        <button class="btn  btn-primary btn-round"data-toggle="modal" data-target="#menu" style="background-color: #ff0000;  width: 70%;height: 70%; margin-left: 30px; margin-top: 1px" >Today's Menu</button>
                     </div>
                 </article>
             </div>
@@ -803,7 +825,7 @@
 </main>
 <!-- Food Menu Modal-->
 <div class="modal fade" id="menu" tabindex="-1" role="">
-    <div class="modal-dialog modal-login" role="document">
+    <div class="modal-dialog modal-login" role="document" style="max-width: 45vw">
         <div class="modal-content">
             <div class="card card-signup card-plain">
                 <div class="modal-header">
@@ -817,7 +839,7 @@
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#lunch" role="tab" data-toggle="tab">
-                                    <i class="material-icons">local_pizza</i> Lunch
+                                    <i class="material-icons" style="height: 52px">local_pizza</i> Lunch
                                 </a>
                             </li>
                             <li class="nav-item">
@@ -825,7 +847,12 @@
                                     <i class="fa fa-cutlery fa-lg" style="color: inherit" ></i> Dinner
                                 </a>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link" style="height: inherit" href="#plans" role="tab" data-toggle="tab">
+                                    <i class="fa fa-table fa-lg" style="color: inherit" ></i> Plans
+                                </a>
                             </li>
+
 
                         </ul>
                     </div>
@@ -868,7 +895,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="tab-pane text-center gallery" id="lunch">
+                        <div class="tab-pane text-center gallery" id="lunch" style="margin-top: -30px;">
                             <div class="card card-nav-tabs " style="padding-top: 10px;">
                                 <div class="card-header card-header-primary">
                                     Item - 1
@@ -893,7 +920,7 @@
                                     <p>Daal</p>
                                 </div>
                             </div>
-                            <div class="card card-nav-tabs text-center " style="padding-top: 20px">
+                            <div class="card card-nav-tabs  " style="padding-top: 20px">
                                 <div class="card-header card-header-primary">
                                     Item - 4
                                 </div>
@@ -906,7 +933,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="tab-pane text-center gallery" id="dinner">
+                        <div class="tab-pane text-center gallery" id="dinner" style="margin-top: -30px;">
                             <div class="card card-nav-tabs " style="padding-top: 10px;">
                                 <div class="card-header card-header-primary">
                                     Item - 1
@@ -931,7 +958,7 @@
                                     <p>Daal</p>
                                 </div>
                             </div>
-                            <div class="card card-nav-tabs text-center " style="padding-top: 20px">
+                            <div class="card card-nav-tabs  " style="padding-top: 20px">
                                 <div class="card-header card-header-primary">
                                     Item - 4
                                 </div>
@@ -944,11 +971,35 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="tab-pane text-center gallery" id="plans" style="margin-top: -30px;">
+                            <div class="card card-nav-tabs " style="padding-top: 10px;">
+                                <div class="card-header card-header-primary">
+                                    Monday - Lunch
+                                </div>
+                                <div class="card-body">
+                                    <p>Puri</p>
+                                    <p>Chhole</p>
+                                    <p>Pulao</p>
+                                </div>
+                            </div>
+                            <div class="card card-nav-tabs" style="padding-top: 20px">
+                                <div class="card-header card-header-primary">
+                                    Day - Time
+                                </div>
+                                <div class="card-body">
+                                    <p>item-1</p>
+                                    <p>item-2</p>
+                                    <p>item-3</p>
+                                </div>
+                            </div>
+
+                        </div>
                     </div>
 <!--                    end pills content-->
                 </div>
                 <div class="modal-footer justify-content-center">
-                    <a href="#pablo" class="btn btn-primary btn-link btn-wd btn-lg">Add To Cart</a>
+                    <a id="triggerEl" class="btn btn-primary btn-link btn-wd btn-lg">Add To Cart</a>
+
                 </div>
             </div>
         </div>
@@ -1089,8 +1140,27 @@
         </div>
     </div>
 </div>
+</body>
+<!--Preloader-->
+<div class="loader-wrapper">
+    <div class='loader loader3'>
+        <div>
+            <div>
+                <div>
+                    <div>
+                        <div>
+                            <div>
+                                <div>
 
-
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 <!-- script to hide top bar when scrolling down -->
 <script src="Javascript/TopScrolling.js"></script>
 <!--end-->
@@ -1117,11 +1187,7 @@
 <script src="Javascript/side-modal.js"></script>
 <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
 <script src="Javascript/Core%20js/material-cards.js"></script>
-<script src="Javascript/login_navigation.js"></script>
-<script>
-    $('#likebutton button').click(function(){
-        $(this).find('i').toggleClass('fa-heart-o fa-heart')
-    });
-</script>
-</body>
+<script src="Javascript/likebutton.js"></script>
+<script src="Javascript/loader.js"></script>
+<script src="Javascript/cartCounter.js"></script>
 </html>

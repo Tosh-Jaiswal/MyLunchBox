@@ -8,7 +8,7 @@ router.post('/foodProviders', (req, res) => {
     .then(item => {res.status(201).send('Item saved')
    }) 
     .catch (err => {
-      res.status(400).send(e)
+      res.status(400).send(err)
    })
 })
 

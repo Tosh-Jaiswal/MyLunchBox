@@ -30,6 +30,34 @@
   <!-- CSS Files -->
   <link href="CSS/material-kit.css?v=2.0.5" rel="stylesheet" />
   <link rel="stylesheet" href="CSS/TopBar.css">
+  <link rel="stylesheet" href="CSS/material-cards.css">
+  <link rel="stylesheet" href="CSS/load.css">
+  <link rel="stylesheet" href="CSS/menuAddRemove.css">
+    <!--script to scroll to top on refresh-->
+    <script>
+        window.onbeforeunload = function () {
+            window.scrollTo(0, 0);
+        }
+    </script>
+    <style>
+        html,body{
+            overflow: auto;
+        }
+      #favorite i.fa{
+        color: white;
+      }
+      /*below code to make the text color of selected option white in and out of focus*/
+      .container4 select {
+        color: white;
+      }
+      .container4 select:focus {
+          color: white;
+      }
+      .container4 option{
+        color: black;
+      }
+
+    </style>
 </head>
 <!--main menu icon top right-->
 <div id="btn-group" style="height: 9vh; background-color: rgba(0,0,0,0);">
@@ -177,9 +205,9 @@
   </div>
 </div>
 <!--end-->
-<body class="profile-page sidebar-collapse">
+<body class="profile-page ">
 
-  <div class="page-header header-filter" data-parallax="true" style="background-image: url('material-kit-master/assets/img/city-profile.jpg');"></div>
+  <div class="page-header header-filter" data-parallax="true" style="background-image: url('img/city-profile.jpg');"></div>
   <div class="main main-raised">
     <div class="profile-content">
       <div class="container">
@@ -187,10 +215,12 @@
           <div class="col-md-6 ml-auto mr-auto">
             <div class="profile">
               <div class="avatar">
-                <img src="img/IMG_5913.JPG" style="max-width: 17vw" alt="Circle Image" class="img-raised rounded img-fluid">
+                <img src="img/IMG_5913.JPG" style="max-width: 17vw" alt="Circle Image" class=" img-raised rounded img-fluid">
               </div>
               <div class="name">
+                <button class="btn btn-primary btn-link">Edit image <i class="fa fa-pencil" aria-hidden="true"></i></button>
                 <h3 class="title">User Name</h3>
+
 
               </div>
             </div>
@@ -218,13 +248,13 @@
                 </li>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="" role="tab" data-toggle="tab">
+                  <a class="nav-link" href="#history" role="tab" data-toggle="tab">
                     <i class="material-icons">history</i> History
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="" role="tab" data-toggle="tab">
-                    <i class="fa fa-address-card"></i> Reviews
+                  <a class="nav-link" href="#updatemenu" role="tab" data-toggle="tab">
+                      <i class="material-icons">restaurant_menu</i> Menu
                   </a>
                 </li>
               </ul>
@@ -410,21 +440,1091 @@
             </div>
 
           <div class="tab-pane text-center gallery" id="favorite">
-            <div class="row">
-              <div class="col-md-3 ml-auto">
+            <div class="row" >
+              <div class="row col-md-10 ml-auto mr-auto active-with-click" style="height: 37vw; overflow: auto">
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                  <article class="material-card Red" >
+                    <h2><div class="row">
+                      <span class="col-md-9">Provider_Name</span>
+                      <div class="col-md-2" id="likebutton">
+                        <button class="btn btn-link"  style="background-color: inherit; margin-top: -8px">
+                          <i class="fa fa-heart-o fa-lg" ></i>
+                        </button>
+                      </div>
+                    </div>
+                      <strong >
+                        <i class="fa fa-fw fa-star"></i>
+                        <i class="fa fa-fw fa-star"></i>
+                        <i class="fa fa-fw fa-star"></i>
+                        <i class="fa fa-fw fa-star-half-o"></i>
+                        <i class="fa fa-fw fa-star-o"></i>
+                      </strong>
 
+
+                    </h2>
+                    <div class="mc-content">
+                      <div class="img-container">
+                        <img class="img-responsive" src="img/cook.jpg">
+                      </div>
+                      <div class="mc-description">
+                        I am a house wife who loves to cook. I Thought why not a earn a little money with my passion. Please Let me know if you like my food by giving a rating .
+                      </div>
+                    </div>
+                    <a class="mc-btn-action">
+                      <i class="fa fa-bars"></i>
+                    </a>
+                    <div class="mc-footer">
+                      <h4 style="margin-top: -30px" >Taking Orders Before - 11:00 A.M.</h4>
+                      <h4>23</h4>
+                      <h4 style="margin-left: 35px">
+                        Orders Completed
+                      </h4>
+                      <button class="btn  btn-primary btn-round"data-toggle="modal" data-target="#menu" style="background-color: #ff0000;  width: 70%;height: 70%; margin-left: 30px; margin-top: 1px" >Today's Menu</button>
+                    </div>
+                  </article>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                  <article class="material-card Pink">
+                    <h2>
+                      <span>Sean Penn</span>
+                      <strong>
+                        <i class="fa fa-fw fa-star"></i>
+                        Mystic River
+                      </strong>
+                    </h2>
+                    <div class="mc-content">
+                      <div class="img-container">
+                        <img class="img-responsive" src="https://dl.dropboxusercontent.com/u/2691310/github/material-card/thumb-sean-penn.jpg">
+                      </div>
+                      <div class="mc-description">
+                        He has won two Academy Awards, for his roles in the mystery drama Mystic River (2003) and the biopic Milk (2008). Penn began his acting career in television with a brief appearance in a 1974 episode of Little House on the Prairie ...
+                      </div>
+                    </div>
+                    <a class="mc-btn-action">
+                      <i class="fa fa-bars"></i>
+                    </a>
+                    <div class="mc-footer">
+                      <h4>
+                        Social
+                      </h4>
+                      <a class="fa fa-fw fa-facebook"></a>
+                      <a class="fa fa-fw fa-twitter"></a>
+                      <a class="fa fa-fw fa-linkedin"></a>
+                      <a class="fa fa-fw fa-google-plus"></a>
+                    </div>
+                  </article>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                  <article class="material-card Purple">
+                    <h2>
+                      <span>Clint Eastwood</span>
+                      <strong>
+                        <i class="fa fa-fw fa-star"></i>
+                        Million Dollar Baby
+                      </strong>
+                    </h2>
+                    <div class="mc-content">
+                      <div class="img-container">
+                        <img class="img-responsive" src="https://dl.dropboxusercontent.com/u/2691310/github/material-card/thumb-clint-eastwood.jpg">
+                      </div>
+                      <div class="mc-description">
+                        He rose to international fame with his role as the Man with No Name in Sergio Leone's Dollars trilogy of spaghetti Westerns during the 1960s ...
+                      </div>
+                    </div>
+                    <a class="mc-btn-action">
+                      <i class="fa fa-bars"></i>
+                    </a>
+                    <div class="mc-footer">
+                      <h4>
+                        Social
+                      </h4>
+                      <a class="fa fa-fw fa-facebook"></a>
+                      <a class="fa fa-fw fa-twitter"></a>
+                      <a class="fa fa-fw fa-linkedin"></a>
+                      <a class="fa fa-fw fa-google-plus"></a>
+                    </div>
+                  </article>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                  <article class="material-card Deep-Purple">
+                    <h2>
+                      <span>Dustin Hoffman</span>
+                      <strong>
+                        <i class="fa fa-fw fa-star"></i>
+                        Kramer vs. Kramer
+                      </strong>
+                    </h2>
+                    <div class="mc-content">
+                      <div class="img-container">
+                        <img class="img-responsive" src="https://dl.dropboxusercontent.com/u/2691310/github/material-card/thumb-dustin-hoffman.jpg">
+                      </div>
+                      <div class="mc-description">
+                        He has been known for his versatile portrayals of antiheroes and vulnerable characters.[3] He won the Academy Award for Kramer vs. Kramer in 1979 ...
+                      </div>
+                    </div>
+                    <a class="mc-btn-action">
+                      <i class="fa fa-bars"></i>
+                    </a>
+                    <div class="mc-footer">
+                      <h4>
+                        Social
+                      </h4>
+                      <a class="fa fa-fw fa-facebook"></a>
+                      <a class="fa fa-fw fa-twitter"></a>
+                      <a class="fa fa-fw fa-linkedin"></a>
+                      <a class="fa fa-fw fa-google-plus"></a>
+                    </div>
+                  </article>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                  <article class="material-card Indigo">
+                    <h2>
+                      <span>Edward Norton</span>
+                      <strong>
+                        <i class="fa fa-fw fa-star"></i>
+                        American History X
+                      </strong>
+                    </h2>
+                    <div class="mc-content">
+                      <div class="img-container">
+                        <img class="img-responsive" src="https://dl.dropboxusercontent.com/u/2691310/github/material-card/thumb-edward-norton.jpg">
+                      </div>
+                      <div class="mc-description">
+                        He has been nominated for three Academy Awards for his work in the films Primal Fear, American History X and Birdman. He also starred in other roles ...
+                      </div>
+                    </div>
+                    <a class="mc-btn-action">
+                      <i class="fa fa-bars"></i>
+                    </a>
+                    <div class="mc-footer">
+                      <h4>
+                        Social
+                      </h4>
+                      <a class="fa fa-fw fa-facebook"></a>
+                      <a class="fa fa-fw fa-twitter"></a>
+                      <a class="fa fa-fw fa-linkedin"></a>
+                      <a class="fa fa-fw fa-google-plus"></a>
+                    </div>
+                  </article>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                  <article class="material-card Blue">
+                    <h2>
+                      <span>Michael Caine</span>
+                      <strong>
+                        <i class="fa fa-fw fa-star"></i>
+                        Educated Rita
+                      </strong>
+                    </h2>
+                    <div class="mc-content">
+                      <div class="img-container">
+                        <img class="img-responsive" src="https://dl.dropboxusercontent.com/u/2691310/github/material-card/thumb-michael-caine.jpg">
+                      </div>
+                      <div class="mc-description">
+                        English actor and author. Renowned for his distinctive working class cockney accent, Caine has appeared in over 115 films and is regarded as a British ...
+                      </div>
+                    </div>
+                    <a class="mc-btn-action">
+                      <i class="fa fa-bars"></i>
+                    </a>
+                    <div class="mc-footer">
+                      <h4>
+                        Social
+                      </h4>
+                      <a class="fa fa-fw fa-facebook"></a>
+                      <a class="fa fa-fw fa-twitter"></a>
+                      <a class="fa fa-fw fa-linkedin"></a>
+                      <a class="fa fa-fw fa-google-plus"></a>
+                    </div>
+                  </article>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                  <article class="material-card Light-Blue">
+                    <h2>
+                      <span>Harvey Keitel</span>
+                      <strong>
+                        <i class="fa fa-fw fa-star"></i>
+                        Pulp Fiction
+                      </strong>
+                    </h2>
+                    <div class="mc-content">
+                      <div class="img-container">
+                        <img class="img-responsive" src="https://dl.dropboxusercontent.com/u/2691310/github/material-card/thumb-harvey-keitel.jpg">
+                      </div>
+                      <div class="mc-description">
+                        Some of his most notable starring roles were in Martin Scorsese's Mean Streets and Taxi Driver, Ridley Scott's The Duellists and Thelma & Louise, Quentin Tarantino ...
+                      </div>
+                    </div>
+                    <a class="mc-btn-action">
+                      <i class="fa fa-bars"></i>
+                    </a>
+                    <div class="mc-footer">
+                      <h4>
+                        Social
+                      </h4>
+                      <a class="fa fa-fw fa-facebook"></a>
+                      <a class="fa fa-fw fa-twitter"></a>
+                      <a class="fa fa-fw fa-linkedin"></a>
+                      <a class="fa fa-fw fa-google-plus"></a>
+                    </div>
+                  </article>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                  <article class="material-card Cyan">
+                    <h2>
+                      <span>Jack Nicholson</span>
+                      <strong>
+                        <i class="fa fa-fw fa-star"></i>
+                        The Shining
+                      </strong>
+                    </h2>
+                    <div class="mc-content">
+                      <div class="img-container">
+                        <img class="img-responsive" src="https://dl.dropboxusercontent.com/u/2691310/github/material-card/thumb-jack-nicholson.jpg">
+                      </div>
+                      <div class="mc-description">
+                        Throughout his career, Nicholson has portrayed unique and challenging roles, many of which include dark portrayals of excitable, neurotic and psychopathic characters ...
+                      </div>
+                    </div>
+                    <a class="mc-btn-action">
+                      <i class="fa fa-bars"></i>
+                    </a>
+                    <div class="mc-footer">
+                      <h4>
+                        Social
+                      </h4>
+                      <a class="fa fa-fw fa-facebook"></a>
+                      <a class="fa fa-fw fa-twitter"></a>
+                      <a class="fa fa-fw fa-linkedin"></a>
+                      <a class="fa fa-fw fa-google-plus"></a>
+                    </div>
+                  </article>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                  <article class="material-card Teal">
+                    <h2>
+                      <span>Jeff Bridges</span>
+                      <strong>
+                        <i class="fa fa-fw fa-star"></i>
+                        The Big Lebowski
+                      </strong>
+                    </h2>
+                    <div class="mc-content">
+                      <div class="img-container">
+                        <img class="img-responsive" src="https://dl.dropboxusercontent.com/u/2691310/github/material-card/thumb-jeff-bridges.jpg">
+                      </div>
+                      <div class="mc-description">
+                        He comes from a well-known acting family and began his televised acting in 1958 as a child with his father, Lloyd Bridges, and brother, Beau, on television's Sea Hunt ...
+                      </div>
+                    </div>
+                    <a class="mc-btn-action">
+                      <i class="fa fa-bars"></i>
+                    </a>
+                    <div class="mc-footer">
+                      <h4>
+                        Social
+                      </h4>
+                      <a class="fa fa-fw fa-facebook"></a>
+                      <a class="fa fa-fw fa-twitter"></a>
+                      <a class="fa fa-fw fa-linkedin"></a>
+                      <a class="fa fa-fw fa-google-plus"></a>
+                    </div>
+                  </article>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                  <article class="material-card Green">
+                    <h2>
+                      <span>Joaquin Phoenix</span>
+                      <strong>
+                        <i class="fa fa-fw fa-star"></i>
+                        Her
+                      </strong>
+                    </h2>
+                    <div class="mc-content">
+                      <div class="img-container">
+                        <img class="img-responsive" src="https://dl.dropboxusercontent.com/u/2691310/github/material-card/thumb-joaquin-phoenix.jpg">
+                      </div>
+                      <div class="mc-description">
+                        is an American actor, producer, music video director, musician and activist. For his work as an artist, Phoenix has received a Grammy Award, a Golden Globe Award and three Academy ...
+                      </div>
+                    </div>
+                    <a class="mc-btn-action">
+                      <i class="fa fa-bars"></i>
+                    </a>
+                    <div class="mc-footer">
+                      <h4>
+                        Social
+                      </h4>
+                      <a class="fa fa-fw fa-facebook"></a>
+                      <a class="fa fa-fw fa-twitter"></a>
+                      <a class="fa fa-fw fa-linkedin"></a>
+                      <a class="fa fa-fw fa-google-plus"></a>
+                    </div>
+                  </article>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                  <article class="material-card Light-Green">
+                    <h2>
+                      <span>Tom Hanks</span>
+                      <strong>
+                        <i class="fa fa-fw fa-star"></i>
+                        Forrest Gump
+                      </strong>
+                    </h2>
+                    <div class="mc-content">
+                      <div class="img-container">
+                        <img class="img-responsive" src="https://dl.dropboxusercontent.com/u/2691310/github/material-card/thumb-tom-hanks.jpg">
+                      </div>
+                      <div class="mc-description">
+                        He is known for his roles in Big (1988), Philadelphia (1993), Forrest Gump (1994), Apollo 13 (1995), Saving Private Ryan, You've Got Mail (both 1998), The Green Mile (1999), Cast Away (2000) ...
+                      </div>
+                    </div>
+                    <a class="mc-btn-action">
+                      <i class="fa fa-bars"></i>
+                    </a>
+                    <div class="mc-footer">
+                      <h4>
+                        Social
+                      </h4>
+                      <a class="fa fa-fw fa-facebook"></a>
+                      <a class="fa fa-fw fa-twitter"></a>
+                      <a class="fa fa-fw fa-linkedin"></a>
+                      <a class="fa fa-fw fa-google-plus"></a>
+                    </div>
+                  </article>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                  <article class="material-card Lime">
+                    <h2>
+                      <span>Philip Seymour Hoffman</span>
+                      <strong>
+                        <i class="fa fa-fw fa-star"></i>
+                        25th Hour
+                      </strong>
+                    </h2>
+                    <div class="mc-content">
+                      <div class="img-container">
+                        <img class="img-responsive" src="https://dl.dropboxusercontent.com/u/2691310/github/material-card/thumb-philip-seymour-hoffman.jpg">
+                      </div>
+                      <div class="mc-description">
+                        Best known for his distinctive supporting and character roles – typically lowlifes, bullies, and misfits – Hoffman was a regular presence in films from the early 1990s until his death at age 46.
+                      </div>
+                    </div>
+                    <a class="mc-btn-action">
+                      <i class="fa fa-bars"></i>
+                    </a>
+                    <div class="mc-footer">
+                      <h4>
+                        Social
+                      </h4>
+                      <a class="fa fa-fw fa-facebook"></a>
+                      <a class="fa fa-fw fa-twitter"></a>
+                      <a class="fa fa-fw fa-linkedin"></a>
+                      <a class="fa fa-fw fa-google-plus"></a>
+                    </div>
+                  </article>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                  <article class="material-card Yellow">
+                    <h2>
+                      <span>Paul Newman</span>
+                      <strong>
+                        <i class="fa fa-fw fa-star"></i>
+                        The Color of Money
+                      </strong>
+                    </h2>
+                    <div class="mc-content">
+                      <div class="img-container">
+                        <img class="img-responsive" src="https://dl.dropboxusercontent.com/u/2691310/github/material-card/thumb-paul-newman.jpg">
+                      </div>
+                      <div class="mc-description">
+                        He won numerous awards, including an Academy Award for his performance in the 1986 film The Color of Money,[3] a BAFTA Award, a Screen Actors Guild Award, a Cannes Film Festival Award, an Emmy Award ...
+                      </div>
+                    </div>
+                    <a class="mc-btn-action">
+                      <i class="fa fa-bars"></i>
+                    </a>
+                    <div class="mc-footer">
+                      <h4>
+                        Social
+                      </h4>
+                      <a class="fa fa-fw fa-facebook"></a>
+                      <a class="fa fa-fw fa-twitter"></a>
+                      <a class="fa fa-fw fa-linkedin"></a>
+                      <a class="fa fa-fw fa-google-plus"></a>
+                    </div>
+                  </article>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                  <article class="material-card Amber">
+                    <h2>
+                      <span>Marlon Brando</span>
+                      <strong>
+                        <i class="fa fa-fw fa-star"></i>
+                        The Godfather
+                      </strong>
+                    </h2>
+                    <div class="mc-content">
+                      <div class="img-container">
+                        <img class="img-responsive" src="https://dl.dropboxusercontent.com/u/2691310/github/material-card/thumb-marlon-brando.jpg">
+                      </div>
+                      <div class="mc-description">
+                        He is hailed for bringing a gripping realism to film acting, and is frequently cited as the greatest and most influential actor of all time.[2] A cultural icon, Brando is most famous for his Academy ...
+                      </div>
+                    </div>
+                    <a class="mc-btn-action">
+                      <i class="fa fa-bars"></i>
+                    </a>
+                    <div class="mc-footer">
+                      <h4>
+                        Social
+                      </h4>
+                      <a class="fa fa-fw fa-facebook"></a>
+                      <a class="fa fa-fw fa-twitter"></a>
+                      <a class="fa fa-fw fa-linkedin"></a>
+                      <a class="fa fa-fw fa-google-plus"></a>
+                    </div>
+                  </article>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                  <article class="material-card Orange">
+                    <h2>
+                      <span>Kevin Spacey</span>
+                      <strong>
+                        <i class="fa fa-fw fa-star"></i>
+                        American Beauty
+                      </strong>
+                    </h2>
+                    <div class="mc-content">
+                      <div class="img-container">
+                        <img class="img-responsive" src="https://dl.dropboxusercontent.com/u/2691310/github/material-card/thumb-kevin-spacey.jpg">
+                      </div>
+                      <div class="mc-description">
+                        He began his career as a stage actor during the 1980s, before being cast in supporting roles in film and television. He gained critical acclaim in the early 1990s, culminating in his first Academy Award ...
+                      </div>
+                    </div>
+                    <a class="mc-btn-action">
+                      <i class="fa fa-bars"></i>
+                    </a>
+                    <div class="mc-footer">
+                      <h4>
+                        Social
+                      </h4>
+                      <a class="fa fa-fw fa-facebook"></a>
+                      <a class="fa fa-fw fa-twitter"></a>
+                      <a class="fa fa-fw fa-linkedin"></a>
+                      <a class="fa fa-fw fa-google-plus"></a>
+                    </div>
+                  </article>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                  <article class="material-card Deep-Orange">
+                    <h2>
+                      <span>Robert De Niro</span>
+                      <strong>
+                        <i class="fa fa-fw fa-star"></i>
+                        Taxy Driver
+                      </strong>
+                    </h2>
+                    <div class="mc-content">
+                      <div class="img-container">
+                        <img class="img-responsive" src="https://dl.dropboxusercontent.com/u/2691310/github/material-card/thumb-robert-de-niro.jpg">
+                      </div>
+                      <div class="mc-description">
+                        His first major film roles were in the sports drama Bang the Drum Slowly (1973) and Martin Scorsese's crime film Mean Streets (1973). In 1974, after being turned down for the role of Sonny Corleone in the crime ...
+                      </div>
+                    </div>
+                    <a class="mc-btn-action">
+                      <i class="fa fa-bars"></i>
+                    </a>
+                    <div class="mc-footer">
+                      <h4>
+                        Social
+                      </h4>
+                      <a class="fa fa-fw fa-facebook"></a>
+                      <a class="fa fa-fw fa-twitter"></a>
+                      <a class="fa fa-fw fa-linkedin"></a>
+                      <a class="fa fa-fw fa-google-plus"></a>
+                    </div>
+                  </article>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                  <article class="material-card Brown">
+                    <h2>
+                      <span>Steve Mcqueen</span>
+                      <strong>
+                        <i class="fa fa-fw fa-star"></i>
+                        Papillon
+                      </strong>
+                    </h2>
+                    <div class="mc-content">
+                      <div class="img-container">
+                        <img class="img-responsive" src="https://dl.dropboxusercontent.com/u/2691310/github/material-card/thumb-steve-mcqueen.jpg">
+                      </div>
+                      <div class="mc-description">
+                        Called "The King of Cool", his "anti-hero" persona, developed at the height of the Vietnam War-era counterculture, made him a top box-office draw of the 1960s and 1970s. McQueen received an Academy Award nomination for his ...
+                      </div>
+                    </div>
+                    <a class="mc-btn-action">
+                      <i class="fa fa-bars"></i>
+                    </a>
+                    <div class="mc-footer">
+                      <h4>
+                        Social
+                      </h4>
+                      <a class="fa fa-fw fa-facebook"></a>
+                      <a class="fa fa-fw fa-twitter"></a>
+                      <a class="fa fa-fw fa-linkedin"></a>
+                      <a class="fa fa-fw fa-google-plus"></a>
+                    </div>
+                  </article>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                  <article class="material-card Grey">
+                    <h2>
+                      <span>Rugter Hauer</span>
+                      <strong>
+                        <i class="fa fa-fw fa-star"></i>
+                        Blade Runner
+                      </strong>
+                    </h2>
+                    <div class="mc-content">
+                      <div class="img-container">
+                        <img class="img-responsive" src="https://dl.dropboxusercontent.com/u/2691310/github/material-card/thumb-rugter-hauer.jpg">
+                      </div>
+                      <div class="mc-description">
+                        Blonde, blue-eyed, tall and handsome Dutch actor Rutger Hauer has an international reputation for playing everything from romantic leads to action heroes to sinister villains. Hauer was born in Breukelen, a town in the province ...
+                      </div>
+                    </div>
+                    <a class="mc-btn-action">
+                      <i class="fa fa-bars"></i>
+                    </a>
+                    <div class="mc-footer">
+                      <h4>
+                        Social
+                      </h4>
+                      <a class="fa fa-fw fa-facebook"></a>
+                      <a class="fa fa-fw fa-twitter"></a>
+                      <a class="fa fa-fw fa-linkedin"></a>
+                      <a class="fa fa-fw fa-google-plus"></a>
+                    </div>
+                  </article>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                  <article class="material-card Blue-Grey">
+                    <h2>
+                      <span>Morgan Freeman</span>
+                      <strong>
+                        <i class="fa fa-fw fa-star"></i>
+                        Glory
+                      </strong>
+                    </h2>
+                    <div class="mc-content">
+                      <div class="img-container">
+                        <img class="img-responsive" src="https://dl.dropboxusercontent.com/u/2691310/github/material-card/thumb-morgan-freeman.jpg">
+                      </div>
+                      <div class="mc-description">
+                        Freeman has received Academy Award nominations for his performances in Street Smart, Driving Miss Daisy, The Shawshank Redemption and Invictus ...
+                      </div>
+                    </div>
+                    <a class="mc-btn-action">
+                      <i class="fa fa-bars"></i>
+                    </a>
+                    <div class="mc-footer">
+                      <h4>
+                        Social
+                      </h4>
+                      <a class="fa fa-fw fa-facebook"></a>
+                      <a class="fa fa-fw fa-twitter"></a>
+                      <a class="fa fa-fw fa-linkedin"></a>
+                      <a class="fa fa-fw fa-google-plus"></a>
+                    </div>
+                  </article>
+                </div>
               </div>
-              <div class="col-md-3 mr-auto">
 
+            </div>
+          </div>
+          <div class="tab-pane text-center gallery" style="border: 0.3px black solid; padding: 10px; top: -25px"  id="history">
+            <div class="row" style="  overflow: auto; height: 40vw">
+              <div class="card col-md-7 ml-auto mr-auto">
+                  <div class="card-body">
+                    <div class="row" style="border-bottom: 1px black solid">
+                        <h2 style="font-size: 15px" class="col-md-9 text-left">Date - DD/MM/YY</h2>
+                        <h2 style="font-size: 15px" class="col-md-3">Time - Hrs/Min</h2>
+                    </div>
+<!--            below div is history card of order from one provider-->
+                    <div>
+                  <h4 style="font-family: 'Agency FB',sans-serif; font-size: 5vh; border-bottom: 1px black solid">Provider Name</h4>
+                  <div class="row" style="border-bottom: 1px black solid">
+
+
+                        <div class="col-md-6 ">
+                          <div class="form-check" style="top: 10px" >
+                            <label class="form-check-label" style="font-family: 'Agency FB',sans-serif; font-size: 1.7vw">
+                              <input  class="form-check-input"  type="checkbox" value="" checked disabled>
+                              Breakfast
+                              <span class="form-check-sign">
+                                <span class="check"></span>
+                              </span>
+                            </label>
+                          </div>
+                        </div>
+                        <div class="col-md-6 ml-auto mr-auto">
+                          <h3  style="font-family: 'Agency FB',sans-serif; " >breakfast price</h3>
+                        </div>
+                        <div class="col-md-6 ">
+                          <div class="form-check" style="top: 10px">
+                            <label class="form-check-label" style="font-family: 'Agency FB',sans-serif; font-size: 1.7vw">
+                              <input  class="form-check-input" type="checkbox" value="" checked disabled>
+                              Lunch
+                              <span class="form-check-sign">
+                                <span class="check"></span>
+                              </span>
+                            </label>
+                          </div>
+                        </div>
+                        <div class="col-md-6 ml-auto mr-auto">
+                          <h3  style="font-family: 'Agency FB',sans-serif; ">lunch price</h3>
+                        </div>
+                        <div class="col-md-6  ">
+                          <div class="form-check" style="top: 10px">
+                            <label class="form-check-label" style="font-family: 'Agency FB',sans-serif; font-size: 1.7vw">
+                              <input  class="form-check-input"  type="checkbox" value="" checked disabled>
+                              Dinner
+                              <span class="form-check-sign">
+                                <span class="check"></span>
+                              </span>
+                            </label>
+                          </div>
+                        </div>
+                        <div class="col-md-6 ml-auto mr-auto">
+                          <h3  style="font-family: 'Agency FB',sans-serif; ">dinner price</h3>
+                        </div>
+                  </div>
+
+                  <div class="row" style="border-bottom: 1px black solid">
+                    <h3 class="col-md-6" style="font-family: 'Agency FB',sans-serif; ">Sub-Total</h3>
+                    <h3 class="col-md-6" style="font-family: 'Agency FB',sans-serif">Subtotal price</h3>
+                  </div>
+                </div>
+<!--            below div is history card of order from one provider-->
+                    <div>
+                        <h4 style="font-family: 'Agency FB',sans-serif; font-size: 5vh; border-bottom: 1px black solid">Provider Name</h4>
+                        <div class="row" style="border-bottom: 1px black solid">
+
+
+                            <div class="col-md-6 ">
+                                <div class="form-check" style="top: 10px" >
+                                    <label class="form-check-label" style="font-family: 'Agency FB',sans-serif; font-size: 1.7vw">
+                                        <input  class="form-check-input"  type="checkbox" value="" checked disabled>
+                                        Breakfast
+                                        <span class="form-check-sign">
+                                <span class="check"></span>
+                              </span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-md-6 ml-auto mr-auto">
+                                <h3  style="font-family: 'Agency FB',sans-serif; " >breakfast price</h3>
+                            </div>
+                            <div class="col-md-6 ">
+                                <div class="form-check" style="top: 10px">
+                                    <label class="form-check-label" style="font-family: 'Agency FB',sans-serif; font-size: 1.7vw">
+                                        <input  class="form-check-input" type="checkbox" value="" checked disabled>
+                                        Lunch
+                                        <span class="form-check-sign">
+                                <span class="check"></span>
+                              </span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-md-6 ml-auto mr-auto">
+                                <h3  style="font-family: 'Agency FB',sans-serif; ">lunch price</h3>
+                            </div>
+                            <div class="col-md-6  ">
+                                <div class="form-check" style="top: 10px">
+                                    <label class="form-check-label" style="font-family: 'Agency FB',sans-serif; font-size: 1.7vw">
+                                        <input  class="form-check-input"  type="checkbox" value="" checked disabled>
+                                        Dinner
+                                        <span class="form-check-sign">
+                                <span class="check"></span>
+                              </span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-md-6 ml-auto mr-auto">
+                                <h3  style="font-family: 'Agency FB',sans-serif; ">dinner price</h3>
+                            </div>
+                        </div>
+
+                        <div class="row" style="border-bottom: 1px black solid">
+                            <h3 class="col-md-6" style="font-family: 'Agency FB',sans-serif; ">Sub-Total</h3>
+                            <h3 class="col-md-6" style="font-family: 'Agency FB',sans-serif">Subtotal price</h3>
+                        </div>
+                    </div>
+<!--                    below div total price-->
+                    <div class="row" style="border-bottom: 1px black solid">
+                        <h3 class="col-md-6" style="font-family: 'Agency FB',sans-serif; ">Total</h3>
+                        <h3 class="col-md-6" style="font-family: 'Agency FB',sans-serif">Total price</h3>
+                    </div>
+                </div>
+              </div>
+              <div class="card col-md-7 ml-auto mr-auto">
+                  <div class="card-body">
+                      <div class="row" style="border-bottom: 1px black solid">
+                          <h2 style="font-size: 15px" class="col-md-9 text-left">Date - DD/MM/YY</h2>
+                          <h2 style="font-size: 15px" class="col-md-3">Time - Hrs/Min</h2>
+                      </div>
+                      <!--            below div is history card of order from one provider-->
+                      <div>
+                          <h4 style="font-family: 'Agency FB',sans-serif; font-size: 5vh; border-bottom: 1px black solid">Provider Name</h4>
+                          <div class="row" style="border-bottom: 1px black solid">
+
+
+                              <div class="col-md-6 ">
+                                  <div class="form-check" style="top: 10px" >
+                                      <label class="form-check-label" style="font-family: 'Agency FB',sans-serif; font-size: 1.7vw">
+                                          <input  class="form-check-input"  type="checkbox" value="" checked disabled>
+                                          Breakfast
+                                          <span class="form-check-sign">
+                                <span class="check"></span>
+                              </span>
+                                      </label>
+                                  </div>
+                              </div>
+                              <div class="col-md-6 ml-auto mr-auto">
+                                  <h3  style="font-family: 'Agency FB',sans-serif; " >breakfast price</h3>
+                              </div>
+                              <div class="col-md-6 ">
+                                  <div class="form-check" style="top: 10px">
+                                      <label class="form-check-label" style="font-family: 'Agency FB',sans-serif; font-size: 1.7vw">
+                                          <input  class="form-check-input" type="checkbox" value="" checked disabled>
+                                          Lunch
+                                          <span class="form-check-sign">
+                                <span class="check"></span>
+                              </span>
+                                      </label>
+                                  </div>
+                              </div>
+                              <div class="col-md-6 ml-auto mr-auto">
+                                  <h3  style="font-family: 'Agency FB',sans-serif; ">lunch price</h3>
+                              </div>
+                              <div class="col-md-6  ">
+                                  <div class="form-check" style="top: 10px">
+                                      <label class="form-check-label" style="font-family: 'Agency FB',sans-serif; font-size: 1.7vw">
+                                          <input  class="form-check-input"  type="checkbox" value="" checked disabled>
+                                          Dinner
+                                          <span class="form-check-sign">
+                                <span class="check"></span>
+                              </span>
+                                      </label>
+                                  </div>
+                              </div>
+                              <div class="col-md-6 ml-auto mr-auto">
+                                  <h3  style="font-family: 'Agency FB',sans-serif; ">dinner price</h3>
+                              </div>
+                          </div>
+
+                          <div class="row" style="border-bottom: 1px black solid">
+                              <h3 class="col-md-6" style="font-family: 'Agency FB',sans-serif; ">Sub-Total</h3>
+                              <h3 class="col-md-6" style="font-family: 'Agency FB',sans-serif">Subtotal price</h3>
+                          </div>
+                      </div>
+
+                      <!--                    below div total price-->
+                      <div class="row" style="border-bottom: 1px black solid">
+                          <h3 class="col-md-6" style="font-family: 'Agency FB',sans-serif; ">Total</h3>
+                          <h3 class="col-md-6" style="font-family: 'Agency FB',sans-serif">Total price</h3>
+                      </div>
+                  </div>
+              </div>
+              <div class="card col-md-7 ml-auto mr-auto">
+                  <div class="card-body">
+                      <div class="row" style="border-bottom: 1px black solid">
+                          <h2 style="font-size: 15px" class="col-md-9 text-left">Date - DD/MM/YY</h2>
+                          <h2 style="font-size: 15px" class="col-md-3">Time - Hrs/Min</h2>
+                      </div>
+                      <!--            below div is history card of order from one provider-->
+                      <div>
+                          <h4 style="font-family: 'Agency FB',sans-serif; font-size: 5vh; border-bottom: 1px black solid">Provider Name</h4>
+                          <div class="row" style="border-bottom: 1px black solid">
+
+
+                              <div class="col-md-6 ">
+                                  <div class="form-check" style="top: 10px" >
+                                      <label class="form-check-label" style="font-family: 'Agency FB',sans-serif; font-size: 1.7vw">
+                                          <input  class="form-check-input"  type="checkbox" value="" checked disabled>
+                                          Breakfast
+                                          <span class="form-check-sign">
+                                <span class="check"></span>
+                              </span>
+                                      </label>
+                                  </div>
+                              </div>
+                              <div class="col-md-6 ml-auto mr-auto">
+                                  <h3  style="font-family: 'Agency FB',sans-serif; " >breakfast price</h3>
+                              </div>
+                              <div class="col-md-6 ">
+                                  <div class="form-check" style="top: 10px">
+                                      <label class="form-check-label" style="font-family: 'Agency FB',sans-serif; font-size: 1.7vw">
+                                          <input  class="form-check-input" type="checkbox" value="" checked disabled>
+                                          Lunch
+                                          <span class="form-check-sign">
+                                <span class="check"></span>
+                              </span>
+                                      </label>
+                                  </div>
+                              </div>
+                              <div class="col-md-6 ml-auto mr-auto">
+                                  <h3  style="font-family: 'Agency FB',sans-serif; ">lunch price</h3>
+                              </div>
+                              <div class="col-md-6  ">
+                                  <div class="form-check" style="top: 10px">
+                                      <label class="form-check-label" style="font-family: 'Agency FB',sans-serif; font-size: 1.7vw">
+                                          <input  class="form-check-input"  type="checkbox" value="" checked disabled>
+                                          Dinner
+                                          <span class="form-check-sign">
+                                <span class="check"></span>
+                              </span>
+                                      </label>
+                                  </div>
+                              </div>
+                              <div class="col-md-6 ml-auto mr-auto">
+                                  <h3  style="font-family: 'Agency FB',sans-serif; ">dinner price</h3>
+                              </div>
+                          </div>
+
+                          <div class="row" style="border-bottom: 1px black solid">
+                              <h3 class="col-md-6" style="font-family: 'Agency FB',sans-serif; ">Sub-Total</h3>
+                              <h3 class="col-md-6" style="font-family: 'Agency FB',sans-serif">Subtotal price</h3>
+                          </div>
+                      </div>
+                      <!--            below div is history card of order from one provider-->
+                      <div>
+                          <h4 style="font-family: 'Agency FB',sans-serif; font-size: 5vh; border-bottom: 1px black solid">Provider Name</h4>
+                          <div class="row" style="border-bottom: 1px black solid">
+
+
+                              <div class="col-md-6 ">
+                                  <div class="form-check" style="top: 10px" >
+                                      <label class="form-check-label" style="font-family: 'Agency FB',sans-serif; font-size: 1.7vw">
+                                          <input  class="form-check-input"  type="checkbox" value="" checked disabled>
+                                          Breakfast
+                                          <span class="form-check-sign">
+                                <span class="check"></span>
+                              </span>
+                                      </label>
+                                  </div>
+                              </div>
+                              <div class="col-md-6 ml-auto mr-auto">
+                                  <h3  style="font-family: 'Agency FB',sans-serif; " >breakfast price</h3>
+                              </div>
+                              <div class="col-md-6 ">
+                                  <div class="form-check" style="top: 10px">
+                                      <label class="form-check-label" style="font-family: 'Agency FB',sans-serif; font-size: 1.7vw">
+                                          <input  class="form-check-input" type="checkbox" value="" checked disabled>
+                                          Lunch
+                                          <span class="form-check-sign">
+                                <span class="check"></span>
+                              </span>
+                                      </label>
+                                  </div>
+                              </div>
+                              <div class="col-md-6 ml-auto mr-auto">
+                                  <h3  style="font-family: 'Agency FB',sans-serif; ">lunch price</h3>
+                              </div>
+                              <div class="col-md-6  ">
+                                  <div class="form-check" style="top: 10px">
+                                      <label class="form-check-label" style="font-family: 'Agency FB',sans-serif; font-size: 1.7vw">
+                                          <input  class="form-check-input"  type="checkbox" value="" checked disabled>
+                                          Dinner
+                                          <span class="form-check-sign">
+                                <span class="check"></span>
+                              </span>
+                                      </label>
+                                  </div>
+                              </div>
+                              <div class="col-md-6 ml-auto mr-auto">
+                                  <h3  style="font-family: 'Agency FB',sans-serif; ">dinner price</h3>
+                              </div>
+                          </div>
+
+                          <div class="row" style="border-bottom: 1px black solid">
+                              <h3 class="col-md-6" style="font-family: 'Agency FB',sans-serif; ">Sub-Total</h3>
+                              <h3 class="col-md-6" style="font-family: 'Agency FB',sans-serif">Subtotal price</h3>
+                          </div>
+                      </div>
+                      <!--                    below div total price-->
+                      <div class="row" style="border-bottom: 1px black solid">
+                          <h3 class="col-md-6" style="font-family: 'Agency FB',sans-serif; ">Total</h3>
+                          <h3 class="col-md-6" style="font-family: 'Agency FB',sans-serif">Total price</h3>
+                      </div>
+                  </div>
               </div>
             </div>
+          </div>
+          <div class="tab-pane text-center gallery" style="margin-top: -33px" id="updatemenu">
+              <div class="container">
+                  <div class="row">
+                      <div class="col-md-6 ml-auto mr-auto">
+<!--                          Menu Pills-->
+                          <div class="profile-tabs" >
+                              <ul class="nav nav-pills nav-pills-icons justify-content-center" role="tablist">
+                                  <li class="nav-item">
+                                      <a class="nav-link active" href="#breakfast" role="tab" data-toggle="tab">
+                                          <i class="fa fa-coffee fa-lg" style="color: inherit"></i> Breakfast
+                                      </a>
+                                  </li>
+                                  <li class="nav-item">
+                                      <a class="nav-link" href="#lunch" role="tab" data-toggle="tab">
+                                          <i class="material-icons" style="height: 52px">local_pizza</i> Lunch
+                                      </a>
+                                  </li>
+                                  <li class="nav-item">
+                                      <a class="nav-link" style="height: inherit" href="#dinner" role="tab" data-toggle="tab">
+                                          <i class="fa fa-cutlery fa-lg" style="color: inherit" ></i> Dinner
+                                      </a>
+                                  </li>
+                                  <li class="nav-item">
+                                      <a class="nav-link" style="height: inherit" href="#plans" role="tab" data-toggle="tab">
+                                          <i class="fa fa-table fa-lg" style="color: inherit" ></i> Plans
+                                      </a>
+                                  </li>
+
+
+                              </ul>
+                          </div>
+                      </div>
+                  </div>
+<!--                  menu pills content-->
+                  <div class="tab-content tab-space" style="margin-top: -30px; margin-bottom: -90px">
+                      <div class="tab-pane active text-center gallery" id="breakfast" >
+                          <div class="row">
+                              <div class="col-md-6 ml-auto mr-auto">
+                                  <button class="btn btn-primary btn-round ">Submit</button>
+                                  <button class="btn btn-primary btn-round additembutton" ><i class="fa fa-plus" aria-hidden="true"></i>  Add Item</button>
+                                  <div class="container1" style="overflow-y: auto; height: 40vw; padding: 20px">
+                          <div class="card card-nav-tabs " style="padding-top: 10px; ">
+                              <div class="card-header card-header-primary">
+                                  Item - 1
+                                  <a style="color: white" class="close1" >×</a>
+                              </div>
+                              <div class="card-body">
+                                  <input type="text" class="form-control text-center"  placeholder="Item Name">
+                              </div>
+                          </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="tab-pane text-center gallery" id="lunch">
+                          <div class="row">
+                              <div class="col-md-6 ml-auto mr-auto">
+                                  <button class="btn btn-primary btn-round ">Submit</button>
+                                  <button class="btn btn-primary btn-round additembutton2" ><i class="fa fa-plus" aria-hidden="true"></i>  Add Item</button>
+                                  <div class="container2" style="overflow-y: auto; height: 40vw; padding: 20px">
+                                      <div class="card card-nav-tabs " style="padding-top: 10px; ">
+                                          <div class="card-header card-header-primary">
+                                              Item - 1
+                                              <a style="color: white" class="close1" >×</a>
+                                          </div>
+                                          <div class="card-body">
+                                              <input type="text" class="form-control text-center"  placeholder="Item Name">
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="tab-pane text-center gallery" id="dinner" >
+                          <div class="row">
+                              <div class="col-md-6 ml-auto mr-auto">
+                                  <button class="btn btn-primary btn-round ">Submit</button>
+                                  <button class="btn btn-primary btn-round additembutton3" ><i class="fa fa-plus" aria-hidden="true"></i>  Add Item</button>
+                                  <div class="container3" style="overflow-y: auto; height: 40vw; padding: 20px">
+                                      <div class="card card-nav-tabs " style="padding-top: 10px; ">
+                                          <div class="card-header card-header-primary">
+                                              Item - 1
+                                              <a style="color: white" class="close1" >×</a>
+                                          </div>
+                                          <div class="card-body">
+                                              <input type="text" class="form-control text-center"  placeholder="Item Name">
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="tab-pane text-center gallery" id="plans">
+                          <div class="row">
+                              <div class="col-md-6 ml-auto mr-auto">
+                                <button class="btn btn-primary btn-round ">Submit</button>
+                                  <button class="btn btn-primary btn-round additembutton4" ><i class="fa fa-plus" aria-hidden="true"></i>  Add Plan</button>
+                                <div class="container4" style="overflow-y: auto; height: 40vw; padding: 20px">
+                                <div class="card card-nav-tabs " style="padding-top: 10px;">
+                              <div class="card-header card-header-primary">
+
+                                <div class="form-row" >
+                                  <div class="form-group col-md-4 ml-5 mr-auto " style="margin: 0; padding: 0">
+                                  <input type="date" class="form-control  text-center " style="height: 41px; color: white" placeholder="Date">
+                                  </div>
+                                  <div class="form-group col-md-4 ml-5" style="margin: 0; padding: 0">
+                                  <select class="form-control  selectpicker " style=" text-align-last: center; text-align: center" data-style="btn btn-link" >
+                                    <option>Choose...</option>
+                                    <option>Breakfast</option>
+                                    <option>Lunch</option>
+                                    <option>Dinner</option>
+                                  </select></div>
+                                  <a style="color: white; height: 5px" class="close1 col-md-1 ml-auto " >×</a>
+
+                                </div>
+                              </div>
+                              <div class="card-body">
+                                <button class="btn btn-primary btn-link additembutton5" ><i class="fa fa-plus" aria-hidden="true"></i>  Add Item</button>
+                                <div class="container5">
+                                <div class="input-group" style="margin-left: 12px">
+                                <input type="text" class="form-control text-center"  placeholder="Item Name">
+                                <a style="color: black" class="close2" >×</a>
+                                </div>
+
+                              </div>
+                              </div>
+                          </div>
+                                </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+
+              </div>
           </div>
         </div>
       </div>
 
   </div>
   </div>
+</body>
+<!--Preloader-->
+<!--<div class="loader-wrapper">-->
+<!--  <div class='loader loader3'>-->
+<!--    <div>-->
+<!--      <div>-->
+<!--        <div>-->
+<!--          <div>-->
+<!--            <div>-->
+<!--              <div>-->
+<!--                <div>-->
 
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
   <!--   Core JS Files   -->
   <script src="Javascript/Core%20js/jquery.min.js" type="text/javascript"></script>
   <script src="Javascript/Core%20js/popper.min.js" type="text/javascript"></script>
@@ -433,6 +1533,10 @@
   <script src="Javascript/Core%20js/material-kit.js?v=2.0.5" type="text/javascript"></script>
   <script src="Javascript/TopScrolling.js"></script>
   <script src="Javascript/profile-page-script.js"></script>
-</body>
+  <script src="Javascript/loader.js"></script>
+  <script src="Javascript/Core%20js/material-cards.js"></script>
+  <script src="Javascript/likebutton.js"></script>
+  <script src="Javascript/menuAddRemove.js"></script>
+
 
 </html>

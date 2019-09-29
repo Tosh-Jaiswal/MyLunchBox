@@ -16,13 +16,14 @@
 }
 
 #btn-group .button {
-    background-color: rgba(0,0,0,0.01);; /* Green */
+    background-color: rgba(0,0,0,0.01); /* Green */
     border: none;
     /*custom font*/
     font-family: "Amatic SC",SansSerif,serif;
     color: rgba(255,255,255,0.8);
     padding: 1.5vw 2.5vw;
     text-align: center;
+    height: 105%;
     text-decoration: none;
     display: inline-block;
     font-size: 2.1vw;
@@ -31,6 +32,12 @@
     float: right;
 }
 
+#btn-group .w3-dropdown-content{
+    background-color: rgba(0,0,0); /* Green */
+    color: rgba(255,255,255,0.8);
+    font-size: 1.7vw;
+    font-family: "Amatic SC",SansSerif,serif;
+}
 
 
 #btn-group .button:hover {

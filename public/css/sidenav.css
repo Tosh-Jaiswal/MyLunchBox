@@ -12,10 +12,10 @@ main {
     position: relative;
     height: 100%;
     width: 100%;
-    -webkit-transition: transform .7s ease-in-out;
-    -moz-transition: transform .7s ease-in-out;
-    -ms-transition: transform .7s ease-in-out;
-    -o-transition: transform .7s ease-in-out;
+    -webkit-transition: transform .4s ease-in-out;
+    -moz-transition: transform .4s ease-in-out;
+    -ms-transition: transform .4s ease-in-out;
+    -o-transition: transform .4s ease-in-out;
     transition: transform .4s ease-in-out;
 }
 
@@ -49,9 +49,9 @@ main {
     width: auto;
     margin: 0 auto;
     -webkit-transition: all .7s ease;
-    -moz-transition: all .7s ease;
-    -ms-transition: all .7s ease;
-    -o-transition: all .7s ease;
+    -moz-transition: all .1s ease;
+    -ms-transition: all .1s ease;
+    -o-transition: all .1s ease;
     transition: all .1s ease;
 }
 
